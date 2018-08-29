@@ -62,7 +62,7 @@
 			
 		</div>
 		
-		<div id="gatewaysbanners" style="top: 0px;">
+		<div id="gatewaysbanners">
 			<div id="header" class="content-block gateways" style="background-color: #00d5e6; opacity: 1; top: 0px;">
 				<section class="center">
 					{{-- <div class="secondary-slogan">
@@ -71,7 +71,7 @@
 					<div class="slogan">
 						GATEWAYS 2018
 					</div> --}}
-					<div class="slogan" style="margin-top: 0px">
+					<div style="margin-top: 0px">
 						<img src="{{ asset('nevada/nevada1/logoss/poster-final2-Recovered.png') }}" alt="" class="img-resposive">
 					</div>
 				</section>
@@ -108,7 +108,6 @@
 				</section>
 			</div>
 		</div>
-		
 	</div>
 </div>
 {{-- <input type="hidden" id="mobileLink" value="{{ asset('nevada/nevada1/assets/videos/Sequence_02_1.mp4') }}"> --}}
@@ -139,11 +138,11 @@
 	myFunction();
 </script>
 
-
+<div id="login1"></div>
 <div class="content-block parallax" id="parallax" style="margin-top: auto;">
 	<div class="container-fluid">
 		<div class="col-md-10 col-md-offset-1">
-			<div id="login1"></div>
+			
 			<div id="infoOnMobile">
 				<div class="row">
 					<h4 class="call-action pull-left" style="color: #fff;">Department of Computer Science PG</h4>
