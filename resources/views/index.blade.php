@@ -65,12 +65,12 @@
 		<div id="gatewaysbanners">
 			<div id="header" class="content-block gateways" style="background-color: #00d5e6; opacity: 1; top: 0px;">
 				<section class="center">
-					<div class="secondary-slogan">
-						{{-- Department of Computer Science PG --}}
+					{{-- <div class="secondary-slogan">
+						Department of Computer Science PG
 					</div>
 					<div class="slogan">
-						{{-- GATEWAYS 2018 --}}
-					</div>
+						GATEWAYS 2018
+					</div> --}}
 					<div class="slogan" style="margin-top: 0px">
 						<img src="{{ asset('nevada/nevada1/logoss/poster-final2-Recovered.png') }}" alt="" class="img-resposive">
 					</div>
