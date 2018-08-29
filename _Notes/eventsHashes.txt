@@ -1,0 +1,12 @@
+it_manager			$2y$10$IHCxK8P/A3UwO3qhlU9hEuP1oxHFr4hcj94bRpdPzRy/uxIuDIAJ2
+treasure_hunt		$2y$10$PX.f3rqXN4esixudzdCJbu9zwarHNJcuXRAZJKP7Y/EZzkocFimiu
+gaming				$2y$10$kDWPauCCKJYHdmk59FK5LOnKUsUZXmDiGROGb2jXk9qEdAUcZoP5.
+photography			$2y$10$LLHRgwC2IgtiXAF..kKXr.VcQQMsALQDVcXS05WVCfl6GwdpDLtim
+ad_making			$2y$10$JakLpBDTHNobDxGLoH3jVundsj1e1Xkj2j4BCQbnd14LEetllGYSK
+coding_debugging	$2y$10$a2Tx7A9jkW7GmGA27bCSO.pe4dc8ZeeulPT4ZkW7tVTAbivtrr066
+quiz				$2y$10$RMGkg93wSUbCKc5Aak2hhOOF16KGKh0yRPR/2Fdw13TsdIzQlMvwa
+app_prototyping		$2y$10$MlxILhuX1dGsGEdl.70KOe24wj1oKhVLh5h6o/5iuXMf13VzvriiS
+mock_parliament		$2y$10$IiKTqltRlnDs.IP/x4CCAe36vVfiTLZypY1Pzd5dr87ot/MTNZwqK
+product_launch		$2y$10$J04YlBu/yIw6e4RSg71JLeg9djJpZyp9pusZaFylz47rRi3pvjij.
+hackathon			$2y$10$7.a4Zre3KETJS3aokpiCp.HROs6Of1aWxw7adWSuitFKFQkoP1O4K
+event_x				$2y$10$.8b6IkRD2tbaVMhWRiwtge/uOsGjKI1XxofByrBoF7q44RDHRF.Se

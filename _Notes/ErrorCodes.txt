@@ -1,0 +1,52 @@
+ERROR 	DESCRIPTION
+_____	___________
+
+-1		Error in adding a new College in 'colleges' table
+1		Successfully added a new College in 'colleges' table
+-2		Error in adding a new Student. Already exists
+-3		Error in adding student. Registration limit 15 reached
+2		Successfully added a new Student in 'students' table
+3		Registeration Fee Acknowledgement Successful. QR Code Hashes for 2 Foods, 1 student generated
+-4		Error in Registration Fee Acknowledgement. QR Code Hash Failed
+-5		Error in Log in. password does not match
+4		Log in successful
+-6		Some other error in Logging in
+5		Registration Check Complete! Student Present for Fest
+-7		Registration Check Failed! Registration QR Code Does not match.
+-8		Student Did not Pay Fees. Cannot do Registration Hash Check!
+-9		Student Not Found during Registration Hash Check!
+-10		Some other error during Registration Hash Check!
+6		Food Day 1 Check Complete! Student Present to take Food on Day 1.
+-11		Food Day 1 Check Already Complete! Student has taken Food on Day 1.
+-12		Food Day 1 Check Failed! Food Day 1 QR Code Does not match.
+-13		Student Did not Pay Fees. Cannot do Food Day 1 Hash Check!
+-14		Student Not Found during Food Day 1 Hash Check!
+-15		Some other error during Food Day 1 Hash Check!
+7		Food Day 2 Check Complete! Student Present to take Food on Day 2.
+-16		Food Day 2 Check Already Complete! Student has taken Food on Day 2.
+-17		Food Day 2 Check Failed! Food Day 2 QR Code Does not match.
+-18		Student Did not Pay Fees. Cannot do Food Day 2 Hash Check!
+-19		Student Not Found during Food Day 2 Hash Check!
+-20		Some other error during Food Day 2 Hash Check!
+8		Event Added Successfully to 'events' table
+-21		Event Already Exists in 'events' table
+-22		Some other error while fetching all event details.
+-23		No events added yet. Event count is zero.
+9		Events found
+-24		Some other error in student self enrollment for event
+-25		Student Not found for self enrollment
+-26		Invalid QR code for self enrollemnt
+-27		Student Already Registered in this event in enrollment!
+10		Self Registration Successful in Event!
+11		Self Registration Successful in Event! enrollment updated.
+-28		Error in Log in. Email does not exist
+-29		Student QR Hash did not match for enrollment by head for event!
+-30		Some other error in student un-enrollment by self for event!
+-31		Student enrollment not found for un-enrollment!
+-32		Student Already un-enrolled from the event!
+12		Student un-enrolled from the event!
+13		Students found for this event
+-33		No students enrolled yet.
+-34		Some other error while fetching all student details for this event.
+14		Colleges found
+-35		Error in Fetching College Details

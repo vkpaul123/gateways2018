@@ -1,0 +1,31 @@
+ALL FILLABLE FIELDS
+
+1.	Students: REGISTRATION PAGE
+	'college_id' ...drop down list. shows all the names of the colleges with their id's as Valuesthat are primary keys (Autoincrement integer, 1,2,3 and so on) of College table
+	'name' ...name of the student particiapting
+	'roll' ...participant's college roll number
+	'mobile' ...participant's mobile number (10 digits only)
+	'email' ...participants email address. use input field as 'email'
+	'password' ...minimum 8 character long
+
+	LOG IN PAGE:
+		use 'email' and 'password' as log in credentials
+
+	after student data is stored using Register or Login in the database, the 'id' which is the primary will be generated and can be read through the JSON response. This 'id' will be keyed to 'student_id' field in the JSON after login/register request, which will be used in further transactions related to enrolling and de-enrolling the students in the events. 'student_id' has to be stored in the browser (eg. Cookies). As soon as the user leaves the window or clicks on logout, delete this Cookie or wherever you're storing the 'student_id'.
+
+
+2.	Event: NO FILLABLE FIELDS here.
+	'name' ... Name of the Event in Gateways terms. refer the brochure
+	'commonName' ...Actual name of the event that is known by all     example('name' => 'Game-o-Tronix' and 'commonName' => 'Gaming')
+	'location' ...venue of the event
+	'time' ...starting time of the event
+	'rounds' ...how many rounds are there in the event (integer)
+	'if_team' ... if the event is a Solo or a Team event
+	'members' ...show a number only if the 'if_team' field == true
+	'organizer' ...name of the organizer
+	'mobile' ...mobile number of the organizer
+
+
+	All the above mentioned and a few more details which are not to be displayed will be sent to you in a JSON fromat from the API call.
+	Each event should separetly have an 'Enroll' and 'De-Enroll' button. Make 'Enroll' visible if user has NOT enrolled, and 'De-Enroll' visible
+	if the user has enrolled. This has to be checked with what all events are available in 'enrollments' array, which will be sent to you b API respone. To enroll/denroll a student for an event, call appropriate API with 'student_id' and 'event_id'.

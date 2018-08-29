@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Bauhaus Modern";
+    src: url("BauhausModern-Regular.eot?") format("eot"), url("BauhausModern-Regular.woff") format("woff"), url("BauhausModern-Regular.ttf") format("truetype"), url("BauhausModern-Regular.svg#BauhausModern-Regular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.gatewaysdiv {
+    font-family: "Bauhaus Modern";
+    text-align: center;
+    font-size: 48px;
+}
