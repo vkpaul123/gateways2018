@@ -62,7 +62,7 @@
 			
 		</div>
 		
-		<div id="gatewaysbanners">
+		<div id="gatewaysbanners" style="top: 0px;">
 			<div id="header" class="content-block gateways" style="background-color: #00d5e6; opacity: 1; top: 0px;">
 				<section class="center">
 					{{-- <div class="secondary-slogan">
