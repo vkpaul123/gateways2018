@@ -1144,7 +1144,7 @@
 						</div>
 
 						<div class="form-group">
-							<a href="{{ url('https://www.thecollegefever.com/events/gateways') }}" class="text-center btn btn-o-white" target="_blank"><strong><i class="fa fa-ticket"></i> Get Your Ticket</strong></a>
+							<a href="{{ url('https://www.thecollegefever.com/events/gateways') }}" class="text-center btn btn-o-white btn-lg" target="_blank"><strong><i class="fa fa-ticket"></i> Get Your Ticket</strong></a>
 						</div>
 						
 
@@ -1180,13 +1180,16 @@
 					<h2 class="footer-block">Instructions</h2>
 					<ul>
 						<li><i class="fa fa-check"></i>Event starts on <strong>6 September 2018</strong>.</li><br>
-						<li><i class="fa fa-check"></i>Maximum of 20 participants per college.</li>
+						<li><i class="fa fa-check"></i>Maximum of 20 participants per college.</li><br>
+						<li><i class="fa fa-check"></i>Participants are required to carry their ID card.</li><br>
+						<li><i class="fa fa-check"></i>Participants are required to get their Tickets from <strong><i>TheCollegeFever.com</i></strong> using the provided link.</li>
 						<br>
-						<li><i class="fa fa-check"></i>Participants are required to carry their ID card.</li>
+						<li><i class="fa fa-check"></i>Participants can then register to Gateways Account, where you can get all the information about the events.</li>
 						<br>
+						<li><i class="fa fa-check"></i>Participants can then Enroll into any events of their choice, provided the rules for those events are adhered to.</li><br>
 						<li><i class="fa fa-check"></i>Laptops, Pen drives and Cameras needed for the events, have to be carried by the participants.</li>
 						<br>
-						<li><i class="fa fa-check"></i>Registration fee of Rs.100 per participant is to be paid. In no case, will the fee will be refunded.</li>
+						<li><i class="fa fa-check"></i>Registration fee of Rs.110 per participant is to be paid. In no case, will the fee will be refunded.</li>
 						<br>
 						<li><i class="fa fa-check"></i>Registration can be done on the spot or online via app or website, on or before 6th September 2018.</li>
 						<br>
