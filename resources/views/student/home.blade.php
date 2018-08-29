@@ -138,7 +138,9 @@
                             </div>
                             
                             @if ($event->id == env('GAMING_EVENT_ID'))
-
+                                <form action="" style="display: none;" id="enrollment-">
+                                    
+                                </form>
 
                             @else
                                 <form action="" style="display: none;" id="enrollment-{{ $event->id }}">

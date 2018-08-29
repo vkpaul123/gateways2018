@@ -37,7 +37,7 @@
                 <div class="col-md-3 col-xs-7 col-sm-4 header-logo" style="padding-bottom: 10px;">
                     <a href="/"> 
                         {{-- <h1 class="logo">Nevada <span class="logo-head">Plus</span></h1> --}}
-                        <img src="{{ asset('nevada/nevada1/logoss/white_approval_one_copy.png') }}" alt="ss" class="logo img-responsive img" style="padding-bottom: 10px;">
+                        <img src="{{ asset('nevada/nevada1/logoss/christ_logo_white_original.png') }}" alt="ss" class="logo img-responsive img" style="padding-bottom: 10px;">
                     </a>
                 </div>
                 <div class="col-md-8 col-md-offset-1 col-xs-5">
