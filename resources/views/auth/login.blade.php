@@ -35,7 +35,7 @@
         <div class="container-fluid" style="background-color: #2B3E51;">
             <div class="row" style="padding-top: 10px;">
                 <div class="col-md-3 col-xs-7 col-sm-4 header-logo" style="padding-bottom: 10px;">
-                    <a href="/"> 
+                    <a href="/welcome"> 
                         {{-- <h1 class="logo">Nevada <span class="logo-head">Plus</span></h1> --}}
                         <img src="{{ asset('nevada/nevada1/logoss/christ_logo_white_original.png') }}" alt="ss" class="logo img-responsive img" style="padding-bottom: 10px;">
                     </a>
