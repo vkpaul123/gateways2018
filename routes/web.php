@@ -110,6 +110,7 @@ Route::get('/student/enrollment/get/{id}/details', 'StudentController@showStuden
 //---------------------------------------------------------------------------------------------------------------------------------------------------
 
 Route::get('/', 'PageController@index')->name('index');
+Route::get('/welcome', 'PageController@welcome')->name('welcome');
 
 Auth::routes();
 
