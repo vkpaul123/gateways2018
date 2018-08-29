@@ -8,20 +8,26 @@
 
 <script type="text/javascript">
 jQuery(document).ready(function($){
-  	$(window).scroll(function() {
-  		
-  		console.log("asdf");
 
-		if ($(window).scrollTop() > 25 ){
-    
- 		$('.top-header').addClass('shows');
-    
-  		} else {
-    
-   	 	$('.top-header').removeClass('shows');
-    
- 		};   	
-	});
+  if(screen.width > 992) {
+    $(window).scroll(function() {
+    		
+    		// console.log("asdf");
+
+  		if ($(window).scrollTop() > 25 ){
+      
+   		$('.top-header').addClass('shows');
+      
+    		} else {
+      
+     	 	$('.top-header').removeClass('shows');
+      
+   		};   	
+  	 });
+
+  } else {
+    $('.top-header').removeClass('shows');
+  }
 
 });
 
