@@ -26,7 +26,7 @@ jQuery(document).ready(function($){
   	 });
 
   } else {
-    $('.top-header').removeClass('shows');
+    $('.top-header').addClass('shows');
   }
 
 });
