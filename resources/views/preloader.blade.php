@@ -122,7 +122,7 @@
 		  margin: 0 0 2px 0;
 		  width: 100%;
 		  height: 2px;
-		  background: #00d5e6;
+		  background: #475B6F;
 		}
 		.loading .finger-item i {
 		  position: absolute;
@@ -136,7 +136,7 @@
 		  -moz-background-clip: padding;
 		  border-radius: 10px 10px 7px 7px;
 		  background-clip: padding-box;
-		  background: #00d5e6;
+		  background: #475B6F;
 		}
 		.loading .last-finger {
 		  position: relative;
@@ -183,7 +183,7 @@
 		  -moz-background-clip: padding;
 		  border-radius: 0 0 15px 15px;
 		  background-clip: padding-box;
-		  background: #00d5e6;
+		  background: #475B6F;
 		}
 		@-webkit-keyframes finger-1-animation {
 		  0% {
@@ -1189,7 +1189,7 @@
 		}
 		body {
 		  /*font-family: 'Open Sans', sans-serif;*/
-		  background: #00d5e6;
+		  background: #475B6F;
 		}
 
 	</style>
