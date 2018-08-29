@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="{{ asset('nevada/nevada1/assets/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('nevada/nevada1/assets/css/font-awesome.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('nevada/nevada1/assets/css/style.css') }}" media="screen"/>
-	
+
 	<style>
 		/* INSPIRATION: http://drbl.in/1945392 */
 		/*@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);*/
@@ -1238,7 +1238,7 @@
 		        // Move to a new location or you can do something else
 		        window.location.href = "/welcome";
 
-		    }, 5000);
+		    }, 7000);
 
 	// jQuery(document).ready(function($){
 	//   	$(window).scroll(function() {
