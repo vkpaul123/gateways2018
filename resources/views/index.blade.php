@@ -31,11 +31,6 @@
 		height: 100%;
 	}
 
-	#video_background {
-		height: 250%;
-		width: 100%;
-	}
-
 	.WebContainer{
 	    width:100%;
 	    min-width:1000px;
@@ -122,6 +117,9 @@
 			document.getElementById('gatewaysbanners').style.display = "none";
 			
 			var link = document.getElementById('mobileLink').value;
+
+			document.getElementById('video_background').style.height = "250%";
+			document.getElementById('video_background').style.width = "100%";
 
 			document.getElementById('video_background').innerHTML = '<img style="width:100%" src="'+ link +'" alt="gif">';
 			// document.getElementById('video_background').innerHTML = '<source src="'+ link +'">';
