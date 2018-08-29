@@ -17,7 +17,7 @@
 				<div class="col-md-3 col-xs-7 col-sm-4 header-logo">
 					<a href="/"> 
 						{{-- <h1 class="logo">Nevada <span class="logo-head">Plus</span></h1> --}}
-						<img src="{{ asset('nevada/nevada1/logoss/CULogo.png') }}" alt="ss" class="logo" style="padding-top: 3px;">
+						<img src="{{ asset('nevada/nevada1/logoss/white_approval_one_copy.png') }}" alt="ss" class="logo img-responsive img" style="padding-bottom: 10px;">
 					</a>
 				</div>
 
@@ -26,7 +26,7 @@
 					  	<div class="container-fluid nav-bar">
 					    <!-- Brand and toggle get grouped for better mobile display -->
 						    <div class="navbar-header">
-						      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="margin-top: 10px;">
+						      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="margin-top: 15px;">
 							        <span class="sr-only">Toggle navigation</span>
 							        <span class="icon-bar"></span>
 							        <span class="icon-bar"></span>
@@ -53,7 +53,7 @@
 									        <li>
 									            <a href="{{ route('logout') }}"
 									                onclick="event.preventDefault();
-									                         document.getElementById('logout-form').submit();">
+									                         document.getElementById('logout-form').submit();" class="text-center">
 									                Logout
 									            </a>
 

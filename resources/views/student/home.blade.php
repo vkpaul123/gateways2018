@@ -92,7 +92,18 @@
                                                     <div class="panel-body">
                                                         <h4>Scan to enroll</h4>
                                                             <center>
-                                                                {!! QrCode::size(150)->generate($event->qrCodeHash); !!}
+                                                                @if ($event->id == env('GAMING_EVENT_ID'))
+                                                                    <h5>Counter Strike 1.6</h5>
+                                                                    {!! QrCode::size(150)->generate(env('GAME_QRHASH_CS')); !!}
+                                                                    <hr>
+                                                                    <h5>Blur</h5>
+                                                                    {!! QrCode::size(150)->generate(env('GAME_QRHASH_BLUR')); !!}
+                                                                    <hr>
+                                                                    <h5>FIFA '18</h5>
+                                                                    {!! QrCode::size(150)->generate(env('GAME_QRHASH_FIFA')); !!}
+                                                                @else
+                                                                    {!! QrCode::size(150)->generate($event->qrCodeHash); !!}
+                                                                @endif
                                                             </center>
                                                         <hr>
                                                         Location: <strong>{{ $event->location }}</strong> <br>
@@ -125,10 +136,15 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            @if ($event->id == env('GAMING_EVENT_ID'))
 
-                            <form action="" style="display: none;" id="enrollment-{{ $event->id }}">
-                                
-                            </form>
+
+                            @else
+                                <form action="" style="display: none;" id="enrollment-{{ $event->id }}">
+                                    
+                                </form>
+                            @endif
                         @endforeach
                     </div>
                 </div>

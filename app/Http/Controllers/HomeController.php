@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\Student;
+use App\StudentEvents;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
