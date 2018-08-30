@@ -128,7 +128,7 @@
                                 <div class="form-group">
                                     <div class="col-md-8 col-md-offset-4">
                                         <div class="pull-right">
-                                            <a href="/#registration" onclick="alert('Use your Ticket ID to Register Again.');">Register &nbsp; | &nbsp; Forgot Password</a>
+                                            <a href="/welcome#registration" onclick="alert('Use your Ticket ID to Register Again.');">Register &nbsp; | &nbsp; Forgot Password</a>
                                         </div>
                                     </div>
                                 </div>

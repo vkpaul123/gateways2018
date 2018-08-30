@@ -75,41 +75,74 @@ class StudentController extends Controller
 
     public function registerStudentTFC(Request $request)
     {
-        try {
-            // return 2;
-            $payload = json_decode($request->getContent(), true);
+        // try {
+            $payload = json_decode(utf8_encode($request->getContent()), true);
 
-            $student = new Student;
-            $student->name = $payload['studentName'];
-            $student->email = $payload['email'];
-            $student->mobile = $payload['mobile'];
-            $student->college = $payload['collegeName'];
-            $student->place = $payload['place'];
-            $student->ticket_id = $payload['ticket_id'];
-            $student->amountPaid = $payload['amountPaid'];
+            foreach ($payload['ticketItems'] as $ticketItem) {
+                $student = new Student;
 
-            $collegeExist = Student::where('college', $payload['collegeName'])->get()->first();
-            if(isset($collegeExist)) {
-                $student->team = $collegeExist->team;
-            } else {
-                $team = Team::first();
-                $student->team = $team->name;
-                Team::where('name', $team->name)->delete();
+                $student->name = $ticketItem['attendee']['name'];
+                $student->college = $ticketItem['attendee']['college'];
+                $student->email = $ticketItem['attendee']['email'];
+                $student->mobile = $ticketItem['attendee']['phone'];
+                $student->sex = $ticketItem['attendee']['sex'];
+                $student->place = $ticketItem['attendee']['extraInfoValue'];
+                $student->amountPaid = $ticketItem['fare'] . ' + ' . $ticketItem['serviceCharge'];
+
+                $student->save();
+                // return 'dizugnvsiugjvnfiujvnf ciugjvfnc igvjmfn gvjfgnvofjlgvn fjglvnfcgvnfcgjvnfcgvfcngv';
             }
-
-            $student->save();
-
             return Response::json([
-                'status' => 'Created'
+                'status' => 'OK',
+                'description' => 'Record(s) Created'
             ], 201);
-        } catch (\Exception $e) {
-            return Response::json([
-                'status' => 'Error',
-                'description' => 'Some other Error in putting a Student',
-                'errorDetails' => $e
-            ], 203);
-        } 
+
+        // } catch (\Exception $e) {
+        //     return Response::json([
+        //         'status' => 'Error',
+        //         'description' => 'Some other Error in putting a Student',
+        //         'errorDetails' => $e
+        //     ], 203);
+        // } 
     }
+
+    // public function registerStudentTFC(Request $request)
+    // {
+    //     try {
+    //         // return 2;
+    //         $payload = json_decode($request->getContent(), true);
+
+    //         $student = new Student;
+    //         $student->name = $payload['studentName'];
+    //         $student->email = $payload['email'];
+    //         $student->mobile = $payload['mobile'];
+    //         $student->college = $payload['collegeName'];
+    //         $student->place = $payload['place'];
+    //         $student->ticket_id = $payload['ticket_id'];
+    //         $student->amountPaid = $payload['amountPaid'];
+
+    //         // $collegeExist = Student::where('college', $payload['collegeName'])->get()->first();
+    //         // if(isset($collegeExist)) {
+    //         //     $student->team = $collegeExist->team;
+    //         // } else {
+    //         //     $team = Team::first();
+    //         //     $student->team = $team->name;
+    //         //     Team::where('name', $team->name)->delete();
+    //         // }
+
+    //         $student->save();
+
+    //         return Response::json([
+    //             'status' => 'Created'
+    //         ], 201);
+    //     } catch (\Exception $e) {
+    //         return Response::json([
+    //             'status' => 'Error',
+    //             'description' => 'Some other Error in putting a Student',
+    //             'errorDetails' => $e
+    //         ], 203);
+    //     } 
+    // }
 
     // public function registerStudentFinal(Request $request)
     // {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Student;
+use App\Team;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -51,7 +52,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'password' => 'required|string|min:6|confirmed',
-            'ticket_id' => 'required',
+            'email' => 'required|email',
             'Blr_clg' => 'required',
         ]);
     }
@@ -64,14 +65,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $student = Student::where('ticket_id', $data['ticket_id'])->get()->first();
+        $student = Student::where('email', $data['email'])->get()->first();
+    
+        $student->isLocalite = $data['Blr_clg'];
+        $student->password = bcrypt($data['password']);
+        $student->registHash = Hash::make($student->email);
+
+        $teamExist = Student::where('college_id', $student->college_id)->get()->first();
+        if(isset($teamExist)) {
+            $student->team = $teamExist->team;
+        } else {
+            $team = Team::first();
+            $student->team = $team->name;
+            Team::where('name', $team->name)->delete();
+        }
+
+        $student->save();
+
+        return $student;
         
-            $student->isLocalite = $data['Blr_clg'];
-            $student->password = bcrypt($data['password']);
-            $student->registHash = Hash::make($student->email);
-            $student->save();
-            return $student;
-            
 
         // return Student::create([
         //     'name' => $data['name'],

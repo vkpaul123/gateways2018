@@ -197,6 +197,7 @@ class EventController extends Controller
                     'mobile',
                     'photo',
                     'rules',
+                    'rulestext',
                 ]);
                 
                 if(!empty($data) && $data->count()) {
@@ -241,6 +242,7 @@ class EventController extends Controller
                             $event->mobile = $value['mobile'];
                             $event->photo = $value['photo'];
                             $event->rules = $value['rules'];
+                            $event->rulesText = $value['rulestext'];
                             $event->save();
                         }
                     }

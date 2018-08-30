@@ -18,11 +18,14 @@ class CreateStudentsTable extends Migration
 
             $table->string('name');
             $table->string('college');
+            $table->integer('college_id')->nullable();
             $table->string('mobile');
-            $table->string('ticket_id');
+            // $table->string('ticket_id');
             $table->boolean('isLocalite')->default(false);
             $table->string('place');
-            $table->string('amountPaid');
+            $table->string('amountPaid')->nullable();
+
+            $table->string('sex')->nullable();
 
             $table->string('email')->unique();
             $table->string('password')->nullable();
@@ -38,7 +41,7 @@ class CreateStudentsTable extends Migration
             // $table->boolean('foodHash2Attend')->default(false);
 
             $table->string('registHash')->nullable();
-            $table->boolean('attend')->default(false);
+            // $table->boolean('attend')->default(false);
             // $table->boolean('registered')->default(false);
 
             $table->timestamps();

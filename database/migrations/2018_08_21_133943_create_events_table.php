@@ -32,6 +32,7 @@ class CreateEventsTable extends Migration
 
             $table->string('photo');
             $table->longText('rules');
+            $table->longText('rulesText');
 
             $table->timestamps();
         });

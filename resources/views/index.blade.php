@@ -3,6 +3,7 @@
 @section('pageSpecificHeads')
 
 <link href="{{ asset('css/Bauhaus_Modern/gatewaysfont.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
 
 <style>
 	table, th, td {
@@ -35,6 +36,28 @@
 	    width:100%;
 	    min-width:1000px;
 	    height:auto;
+	}
+
+	[class^='select2'] {
+		border-radius: 0px !important;
+	}
+	.select2-container {
+		padding: 0px;
+		border-width: 0px;
+	}
+	.select2-container .select2-choice {
+		height: 38px;
+		line-height: 38px;
+	}
+	.select2-container.form-control {
+		height: auto !important;
+	}
+	.form-control{
+		-webkit-appearance:none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+		-o-appearance: none;
+		appearance: none;
 	} 
 	
 </style>
@@ -71,6 +94,7 @@
 					</div>
 				{{-- </section> --}}
 			</div>
+
 			<div class="content-block gateways2" id="header">
 				<section class="center pull-left">
 					<div class="secondary-slogan departmentOfCompSci departmentOfCompSci2" style="opacity: 1; z-index: 501;">
@@ -98,7 +122,7 @@
 
 					</div>
 					<div class="secondary-slogan departmentOfCompSci" style="opacity: 1; z-index: 501;">
-						<i>Register Now!</i> &nbsp;
+						<i><a href="#registration">Register Now!</a></i> &nbsp;
 					</div>
 				</section>
 			</div>
@@ -107,6 +131,7 @@
 </div>
 {{-- <input type="hidden" id="mobileLink" value="{{ asset('nevada/nevada1/assets/videos/Sequence_02_1.mp4') }}"> --}}
 <input type="hidden" id="mobileLink" value="{{ asset('nevada/nevada1/assets/videos/video2gif.gif') }}">
+{{-- <div id="login1"></div> --}}
 <script>
 	function myFunction() {
 		if (screen.width < 992) {
@@ -136,7 +161,6 @@
 	myFunction();
 </script>
 
-<div id="login1"></div>
 <div class="content-block parallax" id="parallax" style="margin-top: auto;">
 	<div class="container-fluid">
 		<div class="col-md-10 col-md-offset-1">
@@ -162,10 +186,12 @@
 					<h2 class="call-action pull-left timeRemaining" style="color: #fff;"></h2><br>
 				</div>
 				<div class="row">
-					<h4 class="call-action pull-left" style="color: #fff;"><i>Register Now!</i></h4>
+					<h4 class="call-action pull-left" style="color: #00d5e6;"><i><a href="#register">Register Now!</a></i></h4>
 				</div>
 				<hr>
 			</div>
+
+			<div id="login1"></div>
 			@if (Auth::guest())
 				<div class="row">
 					<h3 class="call-action pull-left">&nbsp; Register Yourself.</h3>
@@ -443,8 +469,8 @@
 							</p>
 							<h4>Rules:</h4>
 					  		<p><ul>
-					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Only one participates from one college.</li>
-					  				<br>
+					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Maximum two teams can participat from one college.</li><br>
+					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Maximum two people in one team. There can be a solo participant as well.</li><br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Picture can be taken from Any device or iPhone, you can also use DSLR but picture format must be RAW.</li>
 									<br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Picture should be captured only within the university premises.</li>
@@ -540,9 +566,10 @@
 							</p>
 							<h4>Rules:</h4>
 					  		<p><ul>
+					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Only Team entries are eligible.</li><br>
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Maximum 2 teams per college.</li><br>
-									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; members per team.</li><br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants will not be allowed to use mobile or other electronic gadgets.</li><br>
+									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; The Questions will be in the form of multiple choice, true/false statement, specific-answer questions etc.</li><br>
 					  		</ul></p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
@@ -578,7 +605,7 @@
 				</div>
 				<div class="col-sm-4 recent-button">
 					<a href="#" class="recent-work" style="background-image:url({{ asset('nevada/nevada1/logoss/EventIcons/Web.jpg') }})">
-						<span class="btn btn-o-white" data-toggle="modal" data-target="#coding-debugging-event">Coding And Debugging...</span>
+						<span class="btn btn-o-white" data-toggle="modal" data-target="#coding-debugging-event">Bug Smash...</span>
 					</a>
 					<div class="modal fade" id="coding-debugging-event" role="dialog">
 						<div class="modal-dialog"><div class="modal-content">
@@ -687,7 +714,6 @@
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Each team can have 1 participant.</li><br>
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants are NOT allowed to participate in any other Event.</li><br>
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants are required to carry their own laptop.</li><br>
-					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants are required to carry a pair of Extra Clothes and Necessary Bathing Items.</li><br>
 					  		</ul></p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
@@ -710,263 +736,285 @@
 			<div class="padding-none">
 				<div class="row">
 					<table class="table table-responsive">
-						<thead>
-							<tr>
-								<th class="info" colspan="10"><h3><strong>Day 1</strong> <small class="pull-right">6 September 2018</small></h3></th>
-							</tr>
-						</thead>
-						<thead>
-							<tr>
-								<th>VENUE</th>
-								<th>9:00-10:00</th>
-								<th>10:00-11:00</th>
-								<th>11:00-12:00</th>
-								<th>12:00-1:00</th>
-								<th>Lunch (1:00-2:00)</th>
-								<th>2:00-3:00</th>
-								<th>3:00-4:00</th>
-								<th>4:00-5:00</th>
-								<th>5:00-6:00</th>
-							</tr>
-						</thead>
-						<tbody>      
-							<tr class="success">
-								<td class="warning" >CAMPUS VIEW, 10TH FLOOR, CENTRAL BLOCK</td>
-								<td  class="warning" colspan="2">INAUGURATION</td>
-								<td class="warning">QUIZ</td>
-								<td></td>
-								<td class="danger"></td>
-								<td  class="warning" colspan="3">QUIZ PRELIMS</td>
-								<td></td>
-							</tr>
-							
-							<tr class="success">
-								<td class="warning">SKYVIEW, 10TH FLOOR, CENTRAL BLOCK</td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td class="warning">PRODUCT LAUNCH</td>
-								<td  class="danger"></td>
-								<td></td>
-								<td ></td>
-								<td ></td>
-								<td></td>
-							</tr>
-							
-							<tr class="success">
-								<td class="warning">811 & 812, 8TH FLOOR, CENTRAL BLOCK</td>
-								<td></td>
-								<td></td>
-								<td class="warning" colspan="2">IT MANAGER</td>
-								<td class="danger"></td>
-								<td class="warning" colspan="3">IT MANAGER</td>
-								<td></td>
-							</tr>
-										  
-							<tr class="success">
-								<td class="warning">813, 8TH FLOOR, CENTRAL BLOCK</td>
-								<td></td>
-								<td></td>
-								<td class="warning" colspan="2">AD-MAKING PRELIMS</td>
-								<td class="danger"></td>
-								<td class="warning" colspan="3">AD-MAKING PRELIMS</td>
-								<td></td>
-							</tr>
-										  
-							<tr class="success">
-								<td class="warning">808, 8TH FLOOR, CENTRAL BLOCK</td>
-								<td></td>
-								<td></td>
-								<td class="warning">EVENT-X PRELIMS (GROUND)</td>
-								<td></td>
-								<td  class="danger"></td>
-								<td class="warning">EVENT-X PRELIMS (GROUND)</td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-										  
-							<tr class="success">
-								<td class="warning">809, 8TH FLOOR, CENTRAL BLOCK</td>
-								<td></td>
-								<td></td>
-								<td class="warning" colspan="2">MOCK PARLIMENT</td>
-								<td class="danger"></td>
-								<td class="warning" colspan="3">MOCK PARLIMENT</td>
-								<td></td>
-							</tr>
-										 
-							<tr class="success">
-								<td class="warning" >BCA LAB, 1ST FLOOR, 2ND BLOCK</td>
-								<td></td>
-								<td></td>
-								<td class="warning">CODING &amp; DEBUGGING</td>
-								<td></td>
-								<td class="danger"></td>
-								<td class="warning" colspan="2">CODING &amp; DEBUGGING</td>
-								<td></td>
-								<td></td>
-							</tr>
-										  
-							<tr class="success">
-								<td class="warning">MCA & MSC LAB, 1ST FLOOR, 2ND BLOCK</td>
-								<td></td>
-								<td></td>
-								<td class="warning" colspan="2">GAMING PRELIMS</td>
-								<td class="danger"></td>
-								<td class="warning" colspan="3">GAMING PRELIMS</td>
-								<td></td>
-							</tr>
-										  
-							<tr class="success">
-								<td class="warning">IT LAB, 1ST FLOOR, 2ND BLOCK</td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td class="danger"></td>
-								<td class="warning" colspan="3">TREASURE HUNT PRELIMS</td>
-								<td></td>
-							</tr>
-										  
-							<tr class="success">
-								<td class="warning">211, 2ND FLOOR, CENTRAL BLOCK</td>
-								<td></td>
-								<td></td>
-								<td class="warning" colspan="2">APP PROTOTYPING</td>
-								<td class="danger"></td>
-								<td class="warning" colspan="4">APP PROTOTYPING</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-					  
-				{{-- <hr> --}}
-				
-				<div class="row">
-					<table class="table table-responsive">
-						<thead>
-							<tr>
-								<th class="info" colspan="10"><h3><strong>Day 2</strong> <small class="pull-right">7 September 2018</small></h3></th>
-							</tr>
-						</thead>
-						<thead>
-							<tr>
-								<th>VENUE</th>
-								<th>9:00-10:00</th>
-								<th>10:00-11:00</th>
-								<th>11:00-12:00</th>
-								<th>12:00-1:00</th>
-								<th>Lunch (1:00-2:00)</th>
-								<th>2:00-3:00</th>
-								<th>3:00-4:00</th>
-								<th>4:00-5:00</th>
-								<th>5:00-6:00</th>
-							</tr>
-						</thead>
-						<tbody>      
-							<tr class="success">
-								<td class="warning" >CAMPUS VIEW, 10TH FLOOR, CENTRAL BLOCK</td>
-								<td class="warning" colspan="2">QUIZ</td>
-								<td class="warning" colspan="2">PRODUCT LAUNCH</td>
-								<td class="danger"></td>
-								<td class="warning" colspan="2">IT MANAGER FINALS</td>
-								<td class="warning" >VALEDICTORY</td>
-								<td></td>
-							</tr>
-									  
-							<tr class="success">
-								<td class="warning">811 & 812, 8TH FLOOR, CENTRAL BLOCK</td>
-								<td colspan="4" class="warning">HACKATHON</td>
-								<td  class="danger"></td>
-								<td colspan="2" class="warning">HACKATHON</td>
-								<td ></td>
-								<td ></td>
-							</tr>
-			
-							<tr class="success">
-								<td class="warning">911, 9TH FLOOR, CENTRAL BLOCK</td>
-								<td class="warning" colspan="4">IT MANAGER</td>
-								<td class="danger"></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-									  
-							<tr class="success">
-								<td class="warning">808, 8TH FLOOR, CENTRAL BLOCK</td>
-								<td class="warning" colspan="4" >AD-MAKING FINALS</td>
-								<td class="danger"></td>
-								<td class="warning">AD-MAKING FINALS</td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-									  
-							<tr class="success">
-								<td class="warning">808, 8TH FLOOR, CENTRAL BLOCK</td>
-								<td></td>
-								<td class="warning" colspan="3">EVENT X</td>
-								<td class="danger"></td>
-								<td class="warning" colspan="2">EVENT X FINALS</td>
-								<td></td>
-								<td></td>
-							</tr>
-									  
-							<tr class="success">
-								<td class="warning">809,  8TH FLOOR, CENTRAL BLOCK</td>
-								<td></td>
-								<td class="warning" colspan="3">EVENT X</td>
-								<td class="danger"></td>
-								<td class="warning" colspan="2">EVENT X FINALS</td>
-								<td></td>
-								<td></td>
-							</tr>
-									  
-							<tr class="success">
-								<td class="warning" >BCA LAB, 1ST FLOOR, 2ND BLOCK</td>
-								<td></td>
-								<td></td>
-								<td  colspan="2" class="warning">CODING & DEBUGGING</td>
-								<td class="danger"></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-									  
-							<tr class="success">
-								<td class="warning">MCA & MSC LAB, 1ST FLOOR, 2ND BLOCK</td>
-								<td class="warning" colspan="4">GAMING FINALS</td>
-								<td class="danger"></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-									  
-							<tr class="success">
-								<td class="warning">IT LAB, 1ST FLOOR, 2ND BLOCK</td>
-								<td class="warning" colspan="4">APP PROTOTYPING FINALS</td>
-								<td class="danger"></td>
-								<td class="warning">APP PROTOTYPING FINALS</td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-									  
-							<tr class="success">
-								<td class="warning">211, 2ND FLOOR, CENTRAL BLOCK</td>
-								<td class="warning" colspan="4">PHOTOGRAPHY</td>
-								<td class="danger"></td>
-								<td class="warning">PHOTOGRAPHY</td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>							  
-						</tbody>
-					</table>
+											<thead>
+												<tr>
+													<th class="info" colspan="11"><h3><strong>Day 1</strong> <small class="pull-right">6 September 2018</small></h3></th>
+												</tr>
+											</thead>
+											<thead>
+												<tr>
+													<th>VENUE</th>
+													<th>9:00-10:00</th>
+													<th>10:00-11:00</th>
+													<th>11:00-12:00</th>
+													<th>12:00-1:00</th>
+													<th>Lunch (1:00-2:00)</th>
+													<th>2:00-3:00</th>
+													<th>3:00-4:00</th>
+													<th>4:00-5:00</th>
+													<th>5:00-6:00</th>
+													<th>6:00-7:00</th>
+												</tr>
+											</thead>
+											<tbody>      
+												<tr class="success">
+													<td class="warning" >CAMPUS VIEW, 10TH FLOOR, CENTRAL BLOCK</td>
+													<td  class="warning" colspan="2">INAUGURATION</td>
+													<td class="warning">QUIZ</td>
+													<td></td>
+													<td class="danger"></td>
+													<td  class="warning" colspan="3">QUIZ</td>
+													<td></td>
+													<td></td>
+												</tr>
+												
+												<tr class="success">
+													<td class="warning">SKYVIEW, 10TH FLOOR, CENTRAL BLOCK</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td class="warning">PRODUCT LAUNCH</td>
+													<td  class="danger"></td>
+													<td colspan="4" class="warning">APP PROTOTYPING</td>
+													<td></td>
+												</tr>
+												
+												<tr class="success">
+													<td class="warning">811 & 812, 8TH FLOOR, CENTRAL BLOCK</td>
+													<td></td>
+													<td></td>
+													<td class="warning" colspan="2">HACKATHON</td>
+													<td class="danger"></td>
+													<td class="warning" colspan="5">HACKATHON</td>
+												</tr>
+															  
+												<tr class="success">
+													<td class="warning">911,8TH FLOOR, CENTRAL BLOCK</td>
+													<td></td>
+													<td></td>
+													<td class="warning" colspan="2">IT MANAGER</td>
+													<td class="danger"></td>
+													<td class="warning" colspan="3">IT MANAGER</td>
+													<td></td>
+													<td></td>
+												</tr>
+															  
+												<tr class="success">
+													<td class="warning">813, 8TH FLOOR, CENTRAL BLOCK</td>
+													<td></td>
+													<td></td>
+													<td class="warning" colspan="2">AD-MAKING</td>
+													<td  class="danger"></td>
+													<td colspan="3" class="warning">AD-MAKING</td>
+													<td></td>
+													<td></td>
+												</tr>
+															  
+												<tr class="success">
+													<td class="warning">808, 8TH FLOOR, CENTRAL BLOCK</td>
+													<td></td>
+													<td></td>
+													<td class="warning">EVENT X</td>
+													<td></td>
+													<td class="danger"></td>
+													<td class="warning" colspan="2">EVENT X</td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+															 
+												<tr class="success">
+													<td class="warning" >809, 8TH FLOOR, CENTRAL BLOCK</td>
+													<td></td>
+													<td></td>
+													<td  colspan='2' class="warning">MOCK PARLIMENT</td>
+													<td class="danger"></td>
+													<td class="warning" colspan="3">MOCK PARLIMENT</td>
+													<td></td>
+													<td></td>
+												</tr>
+															  
+												<tr class="success">
+													<td class="warning">BCA LAB, 1ST FLOOR, 2ND BLOCK</td>
+													<td></td>
+													<td></td>
+													<td class="warning" >CODING & DEBUGGING</td>
+													<td></td>
+													<td class="danger"></td>
+													<td class="warning" colspan="2">CODING & DEBUGGING</td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+															  
+												<tr class="success">
+													<td class="warning">MCA & BSc LAB, 1ST FLOOR, 2ND BLOCK</td>
+													<td></td>
+													<td></td>
+													<td class="warning" colspan="2">GAMING</td>
+													<td class="danger"></td>
+													<td class="warning" colspan="5">GAMING</td>
+												</tr>
+															  
+												<tr class="success">
+													<td class="warning">IT LAB, 1ST FLOOR, 2ND BLOCK</td>
+													<td></td>
+													<td></td>
+													<td class="warning" colspan="2">APP PROTOTYPING</td>
+													<td class="danger"></td>
+													<td class="warning" colspan="3">TREASURE HUNT</td>
+													<td></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td class="default" colspan="11">&nbsp;</td>
+												</tr>
+											</tbody>
+									
+											<thead>
+												<tr>
+													<th class="info" colspan="11"><h3><strong>Day 2</strong> <small class="pull-right">7 September 2018</small></h3></th>
+												</tr>
+											</thead>
+											<thead>
+												<tr>
+													<th>VENUE</th>
+													<th>9:00-10:00</th>
+													<th>10:00-11:00</th>
+													<th>11:00-12:00</th>
+													<th>12:00-1:00</th>
+													<th>Lunch (1:00-2:00)</th>
+													<th>2:00-3:00</th>
+													<th>3:00-3:30</th>
+													<th>4:00-5:00</th>
+													<th>5:00-6:00</th>
+													<th>6:00-7:00</th>
+												</tr>
+											</thead>
+											<tbody>      
+												<tr class="success">
+													<td class="warning" >CAMPUS VIEW, 10TH FLOOR, CENTRAL BLOCK</td>
+													<td class="warning" colspan="2">QUIZ</td>
+													<td class="warning" colspan="2">PRODUCT LAUNCH</td>
+													<td class="danger"></td>
+													<td class="warning" colspan="2">IT MANAGER</td>
+													<td class="warning" >VALEDICTORY</td>
+													<td class="warning" > CULTURALS</td>
+													<td></td>
+												</tr>
+														  
+												<tr class="success">
+													<td class="warning">811 & 812, 8TH FLOOR, CENTRAL BLOCK</td>
+													<td colspan="4" class="warning">HACKATHON</td>
+													<td  class="danger"></td>
+													<td colspan="2" class="warning">HACKATHON</td>
+													<td ></td>
+													<td ></td>
+													<td></td>
+												</tr>
+								
+												<tr class="success">
+													<td class="warning">911, 9TH FLOOR, CENTRAL BLOCK</td>
+													<td class="warning" colspan="4">IT MANAGER</td>
+													<td class="danger"></td>
+													<td class="warning">APP PROTOTYPING</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+														  
+												<tr class="success">
+													<td class="warning">808, 8TH FLOOR, CENTRAL BLOCK</td>
+													<td class="warning" colspan="4" >AD-MAKING</td>
+													<td class="danger"></td>
+													<td class="warning">AD-MAKING FINALS</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+														  
+												<tr class="success">
+													<td class="warning">808, 8TH FLOOR, CENTRAL BLOCK</td>
+													<td></td>
+													<td class="warning" colspan="3">EVENT X</td>
+													<td class="danger"></td>
+													<td class="warning" colspan="2">EVENT X FINALS</td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+														  
+												<tr class="success">
+													<td class="warning">809,  8TH FLOOR, CENTRAL BLOCK</td>
+													<td></td>
+													<td class="warning" colspan="3">EVENT X</td>
+													<td class="danger"></td>
+													<td class="warning" colspan="2">EVENT X FINALS</td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+														  
+												<tr class="success">
+													<td class="warning" >BCA LAB, 1ST FLOOR, 2ND BLOCK</td>
+													<td></td>
+													<td></td>
+													<td  colspan="2" class="warning">CODING & DEBUGGING</td>
+													<td class="danger"></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+														  
+												<tr class="success">
+													<td class="warning">MCA & BSc LAB, 1ST FLOOR, 2ND BLOCK</td>
+													<td class="warning" colspan="4">GAMING</td>
+													<td class="danger"></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+														  
+												<tr class="success">
+													<td class="warning">IT LAB, 1ST FLOOR, 2ND BLOCK</td>
+													<td class="warning" colspan="4">APP PROTOTYPING FINALS</td>
+													<td class="danger"></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+														  
+												<tr class="success">
+													<td class="warning">211, 2ND FLOOR, CENTRAL BLOCK</td>
+													<td class="warning" colspan="4">PHOTOGRAPHY</td>
+													<td class="danger"></td>
+													<td class="warning">PHOTOGRAPHY</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+
+												<tr class="success">
+													<td class="warning">DHARMARAM GROUND</td>
+													<td class="warning" colspan="4">TREASURE HUNT</td>
+													<td class="danger"></td>
+													<td class="warning">TREASURE HUNT</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>							
+											</tbody>
+										</table>
 				</div>
 			</div>
 		</div>
@@ -1117,7 +1165,7 @@
 						<div class="alert alert-danger">
 							<button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>
 							<strong>
-								You Have Errors while submitting. Please Fill up the information in the Fields that are Highlighted in Red.
+								You Have Errors while submitting. Please Fill up the information corretly.
 							</strong>
 							<hr>
 							@foreach ($errors->all() as $error)
@@ -1125,12 +1173,68 @@
 							@endforeach
 						</div>
 					</center>
+
+					<!-- Modal -->
+					  <div class="modal fade" id="myModal3" role="dialog">
+					    <div class="modal-dialog">
+					    
+					      <!-- Modal content-->
+					      <div class="modal-content">
+					        <div class="modal-header">
+					          <button type="button" class="close" data-dismiss="modal">×</button>
+					          <h2 class="modal-title text-danger"><strong>Error!</strong></h2>
+					        </div>
+					        <div class="modal-body">
+					        	<h4 class="text-danger">
+					        		You Have Errors while submitting. Please Fill up the information corretly.
+					        	</h4><br>
+
+					        	<span style="color: #333;">
+							          @foreach ($errors->all() as $error)
+			  							{{ $error }} <br>
+			  						  @endforeach
+					        	</span>
+					        </div>
+					        <div class="modal-footer">
+					          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        </div>
+					      </div>
+					      
+					    </div>
+					  </div>
+
 					@endif
 					@if (Session::has('messageError'))
 						<div class="alert alert-danger">
 							{!! Session::get('messageError') !!}
 							<button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>
 						</div>
+
+						<!-- Modal -->
+						  <div class="modal fade" id="myModal3" role="dialog">
+						    <div class="modal-dialog">
+						    
+						      <!-- Modal content-->
+						      <div class="modal-content">
+						        <div class="modal-header">
+						          <button type="button" class="close" data-dismiss="modal">×</button>
+						          <h2 class="modal-title text-danger"><strong>Error!</strong></h2>
+						        </div>
+						        <div class="modal-body">
+						        	<h4 class="text-danger">
+						        		You Have Errors while submitting. Please Fill up the information corretly.
+						        	</h4><br>
+						        	<span style="color: #333;">
+								        {!! Session::get('messageError') !!}
+						        	</span>
+						        </div>
+						        <div class="modal-footer">
+						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        </div>
+						      </div>
+						      
+						    </div>
+						  </div>
 					@endif
 					<form action="{{ route('register') }}" id="contactForm" method="post" name="contactform" class="" role="form">
 						
@@ -1141,18 +1245,45 @@
 						</div>
 
 						<div class="form-group">
-							<a href="{{ url('https://www.thecollegefever.com/events/gateways') }}" class="text-center btn btn-o-white btn-lg" target="_blank"><strong><i class="fa fa-ticket"></i> Get Your Ticket</strong></a>
+							<a href="{{ url('https://www.thecollegefever.com/events/gateways') }}" class="text-center btn btn-o-white btn-lg" target="_blank" disabled onclick="event.preventDefault(); alert('Registrations Opening Shortly.');"><strong><i class="fa fa-ticket"></i> Get Your Ticket</strong></a>
 						</div>
 						
 
 						<div class="form-group">
-							<li><i class="fa fa-exclamation-circle"></i> <i>Please enter the <strong>Ticket ID</strong> after you get your ticket.</i></li>
+							<li><i class="fa fa-exclamation-circle"></i>
+								<p><i>Enter the <strong>Email</strong> that you used while getting your ticket.</i></p>
+							</li>
 						</div>
 						<hr>
-
-					    <div class="form-group{{ $errors->has('ticket_id') ? ' has-error' : '' }}">
-					    	<input type="text" class="form-control form-control-white" id="ticket_id" name="ticket_id" placeholder="Ticket ID" required value="{{old('ticket_id')}}">
+						
+					    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+					    	<input type="email" class="form-control form-control-white" id="email" name="email" placeholder="Email" required value="{{old('email')}}">
 						</div>
+
+						<div id="oldCollege" class="form-group">
+							<select class="form-control select2" style="width: 100%;" name="college_id" id="college_id">
+				                <option disabled="disabled" selected="selected" value="">(Select College)</option>
+
+				                @if ($colleges->count())
+				                    @foreach ($colleges as $college)
+				                    	<option value="{{ $college->id }}">{{ $college->name }}</option>
+				                    @endforeach
+				                @endif
+				                
+							</select>
+
+							<a href="" onclick="event.preventDefault(); document.getElementById('newCollege').style.display='block'; document.getElementById('oldCollege').style.display = 'none';"><i>Cannot Find your College?</i></a>
+						</div>
+						
+					    <div id="newCollege" class="form-group{{ $errors->has('college_name') ? ' has-error' : '' }}" style="display: none;">
+					    	<input type="text" class="form-control form-control-white" id="college_name" name="college_name" placeholder="College Name" value="{{old('college_name')}}"><br>
+
+					    	<input type="text" class="form-control form-control-white" id="college_place" name="college_place" placeholder="Place" value="{{old('college_place')}}">
+
+					    	<a href="" onclick="event.preventDefault(); document.getElementById('oldCollege').style.display='block'; document.getElementById('newCollege').style.display='none';"><i>Cancel</i></a>
+						</div>
+
+					    
 						
 						<div class="form-group{{ $errors->has('Blr_clg') ? ' has-error' : '' }}">
 						
@@ -1168,7 +1299,7 @@
 						</div>
 					    <div id="contactFormResponse"></div>
 					    <div class="form-group">
-					    	<input type="submit" class="text-center btn btn-o-white" value="Register to Gateways 2018">
+					    	<input type="submit" class="text-center btn btn-o-white" value="Register for Gateways 2018">
 					  	</div>
 					</form>
 				</div>
@@ -1178,21 +1309,13 @@
 					<ul>
 						<li><i class="fa fa-check"></i>Event starts on <strong>6 September 2018</strong>.</li><br>
 						<li><i class="fa fa-check"></i>Maximum of 20 participants per college.</li><br>
-						<li><i class="fa fa-check"></i>Participants are required to carry their ID card.</li><br>
-						<li><i class="fa fa-check"></i>Participants are required to get their Tickets from <strong><i>TheCollegeFever.com</i></strong> using the provided link.</li>
-						<br>
-						<li><i class="fa fa-check"></i>Participants can then register to Gateways Account, where you can get all the information about the events.</li>
-						<br>
-						<li><i class="fa fa-check"></i>Participants can then Enroll into any events of their choice, provided the rules for those events are adhered to.</li><br>
-						<li><i class="fa fa-check"></i>Laptops, Pen drives and Cameras needed for the events, have to be carried by the participants.</li>
-						<br>
-						<li><i class="fa fa-check"></i>Registration fee of Rs.110 per participant is to be paid. In no case, will the fee will be refunded.</li>
-						<br>
-						<li><i class="fa fa-check"></i>Registration can be done on the spot or online via app or website, on or before 6th September 2018.</li>
-						<br>
-						<li><i class="fa fa-check"></i>Outstation students should inform the fest organizers before 4th September 2018 for accommodation.</li>
-						<br>
-						<li><i class="fa fa-check"></i>Participants must report at the venue 15 mins prior to the event time.</li>
+                        <li><i class="fa fa-check"></i>Participants are required to carry their college ID cards.</li><br>
+                        <li><i class="fa fa-check"></i>Participants are required to get their Tickets from <strong><i>TheCollegeFever.com</i></strong> using the provided link. They can then proceed to register for a Gateways account, where information about all the events is provided. Participants can then enroll for events of their choice, provided the rules for those events are adhered to.</li><br>
+                        <li><i class="fa fa-check"></i>Laptops, pen drives or cameras needed for the events must be carried by the participants.</li><br>
+                        <li><i class="fa fa-check"></i>Registration fee of Rs.110 per participant is to be paid. The fee will not be refunded in any case.</li><br>
+                        <li><i class="fa fa-check"></i>Registration can be done on the spot or online, via the app or the website, on or before 6 September 2018. Those who wish to register on the spot must be present at the venue at 7:30am on 6 September 2018.</li><br>
+                        <li><i class="fa fa-check"></i>Outstation students should inform the fest organizers about accommodation requirements before 4 September 2018.</li><br>
+                        <li><i class="fa fa-check"></i>Participants must report at the venue 15 mins prior to the event time.</li><br>
 					</ul>
 				</div>
 				
@@ -1250,6 +1373,8 @@
 
 @section('pageSpecificScripts')
 
+<script src="{{ asset('js/select2.full.min.js') }}"></script>
+
 <script>	
 
 // Event button
@@ -1260,6 +1385,8 @@ elems.map(a => {
 	e.preventDefault()
 	}
 });
+
+jQuery('.select2').select2();
 
 if (screen.width > 992) {
 	jQuery('.gateways').fadeOut(8500);
@@ -1273,6 +1400,22 @@ if (screen.width > 992) {
 }
 
 </script>
+
+@if (count($errors) > 0)
+	<script type="text/javascript">
+	    jQuery(window).on('load',function(){
+	        jQuery('#myModal3').modal({backdrop: "static"});
+	    });
+	</script>
+@endif
+
+@if (Session::has('messageError'))
+	<script type="text/javascript">
+	    jQuery(window).on('load',function(){
+	        jQuery('#myModal3').modal({backdrop: "static"});
+	    });
+	</script>
+@endif
 
 <script>
 // Set the date we're counting down to
