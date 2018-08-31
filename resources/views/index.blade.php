@@ -69,7 +69,7 @@
 <div class="wrapper">
 	<div class="h_iframe" id="video">
 		<div id="videoForDeskTop">
-			<iframe id="myVideo" width="100%" height="100%" src="https://www.youtube.com/embed/B14gTKd377w?version=3&loop=1&autoplay=1&rel=0&showinfo=0&controls=0&autohide=1&playlist=3Ny-8x9_9dk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			<iframe id="myVideo" width="100%" height="100%" src="https://www.youtube.com/embed/B14gTKd377w?version=3&loop=1&autoplay=1&mute=1&rel=0&showinfo=0&controls=0&autohide=1&playlist=3Ny-8x9_9dk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 		</div>
 
 		{{-- <video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
@@ -1312,7 +1312,7 @@
                         <li><i class="fa fa-check"></i>Participants are required to carry their college ID cards.</li><br>
                         <li><i class="fa fa-check"></i>Participants are required to get their Tickets from <strong><i>TheCollegeFever.com</i></strong> using the provided link. They can then proceed to register for a Gateways account, where information about all the events is provided. Participants can then enroll for events of their choice, provided the rules for those events are adhered to.</li><br>
                         <li><i class="fa fa-check"></i>Laptops, pen drives or cameras needed for the events must be carried by the participants.</li><br>
-                        <li><i class="fa fa-check"></i>Registration fee of Rs.110 per participant is to be paid. The fee will not be refunded in any case.</li><br>
+                        <li><i class="fa fa-check"></i>Registration fee of Rs.100 per participant is to be paid. The fee will not be refunded in any case.</li><br>
                         <li><i class="fa fa-check"></i>Registration can be done on the spot or online, via the app or the website, on or before 6 September 2018. Those who wish to register on the spot must be present at the venue at 7:30am on 6 September 2018.</li><br>
                         <li><i class="fa fa-check"></i>Outstation students should inform the fest organizers about accommodation requirements before 4 September 2018.</li><br>
                         <li><i class="fa fa-check"></i>Participants must report at the venue 15 mins prior to the event time.</li><br>

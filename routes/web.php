@@ -115,3 +115,30 @@ Route::get('/welcome', 'PageController@welcome')->name('welcome');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+//				DON'T TOUCH ANYTHING BELOW THIS
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//	ADMIN Routes
+Route::group(['namespace' => 'Admin'], function() {
+	Route::prefix('admin')->group(function() {
+		Route::get('/', 'HomeController@index')->name('admin.home');
+
+		//	Auth
+		Route::get('login', 'Auth\LoginController@showLoginForm')->name('admin.login');
+		Route::post('login', 'Auth\LoginController@login');
+		Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+		Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('admin.register');
+		Route::post('register', 'Auth\RegisterController@register');
+		Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+		Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+		Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('admin.password.reset');
+		Route::post('logout', 'Auth\LoginController@logout')->name('admin.logout');
+	});
+});
