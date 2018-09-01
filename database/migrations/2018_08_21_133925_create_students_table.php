@@ -17,13 +17,13 @@ class CreateStudentsTable extends Migration
             $table->increments('id');
 
             $table->string('name');
-            $table->string('college');
+            // $table->string('college');
             $table->integer('college_id')->nullable();
             $table->string('mobile');
             // $table->string('ticket_id');
             $table->boolean('isLocalite')->default(false);
-            $table->string('place');
-            $table->string('amountPaid')->nullable();
+            // $table->string('place');
+            $table->boolean('amountPaid')->default(false);
 
             $table->string('sex')->nullable();
 

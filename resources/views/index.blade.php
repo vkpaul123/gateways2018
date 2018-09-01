@@ -252,7 +252,7 @@
 		                    <img src="{{ asset('nevada/nevada1/logoss/logo.png') }}" alt="" class="img-responsive">
 	                    </i>
 	                    <h4 class="aboutus-title"><b>Gateways 2018</b></h4>
-	                    <p class="aboutus-desc">Gateways is a national level inter-collegiate post graduate IT fest organized by the Department of Computer Science, CHRIST (Deemed to be University). It provides the much needed exposure which is a prerequisite to survive in the IT industry. Participants compete in numerous technical and non-technical events that are both entertaining and intellectually challenging. We are delighted to invite you for the 22nd version of gateways. This is a time for fouble celebrationas we are golden jubilee of CHRIST and silver jubilee of MCA department.</p>
+	                    <p class="aboutus-desc">Gateways is a national level inter-collegiate post graduate IT fest organized by the Department of Computer Science, CHRIST (Deemed to be University). It provides the much needed exposure which is a prerequisite to survive in the IT industry. Participants compete in numerous technical and non-technical events that are both entertaining and intellectually challenging. We are delighted to invite you for the 22nd version of gateways. This is a time for double celebration as we are celebrating golden jubilee of CHRIST and silver jubilee of MCA department.</p>
 	                </div>
 	                <h6 class="text-info" onclick="read2()"><strong>Read More</strong></h6>
 	            </div>
@@ -567,6 +567,7 @@
 							<h4>Rules:</h4>
 					  		<p><ul>
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Only Team entries are eligible.</li><br>
+					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; A Team should have 2 members only.</li><br>
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Maximum 2 teams per college.</li><br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants will not be allowed to use mobile or other electronic gadgets.</li><br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; The Questions will be in the form of multiple choice, true/false statement, specific-answer questions etc.</li><br>
@@ -1112,14 +1113,14 @@
 				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 				  	<!-- Indicators -->
 				  	<ol class="carousel-indicators">
+					    {{-- <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li> --}}
 					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
 				  	</ol><!-- /.carousel-indicators -->
 					
 				  	<!-- Wrapper for slides -->
 				  	<div class="carousel-inner" role="listbox">
-					    <div class="item active">
+					    {{-- <div class="item active">
 					      	<div class="img-center">	
 					      		<img src="{{ asset('nevada/nevada1/logoss/Sponsors/CollegeFever.png') }}">
 					      	</div>	
@@ -1127,8 +1128,8 @@
 					      		Ticketing Partner
 					      	</h3>
 					      	<a target="_blank" href="{{ url('https://www.thecollegefever.com/') }}" class="btn btn-default">Visit</a>
-					    </div><!-- /.item -->
-					    <div class="item">
+					    </div> --}}
+					    <div class="item active">
 					    	<div class="img-center">	
 					      		<img src="{{ asset('nevada/nevada1/logoss/Sponsors/hackerearth.png') }}">
 					      	</div>
@@ -1240,24 +1241,37 @@
 						
 						{{-- {{ method_field('PUT') }} --}}
 
-						<div class="form-group">
+						{{-- <div class="form-group">
 							<h4 style="color: #fff; font-style: italic;">Ticket Please...</h4>
 						</div>
 
 						<div class="form-group">
 							<a href="{{ url('https://www.thecollegefever.com/events/gateways') }}" class="text-center btn btn-o-white btn-lg" target="_blank" disabled onclick="event.preventDefault(); alert('Registrations Opening Shortly.');"><strong><i class="fa fa-ticket"></i> Get Your Ticket</strong></a>
-						</div>
+						</div> --}}
 						
 
-						<div class="form-group">
+						{{-- <div class="form-group">
 							<li><i class="fa fa-exclamation-circle"></i>
 								<p><i>Enter the <strong>Email</strong> that you used while getting your ticket.</i></p>
 							</li>
 						</div>
-						<hr>
+						<hr> --}}
+						<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+					    	<input type="text" class="form-control form-control-white" id="name" name="name" placeholder="Full Name" required value="{{old('nameemail')}}">
+						</div>
 						
 					    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 					    	<input type="email" class="form-control form-control-white" id="email" name="email" placeholder="Email" required value="{{old('email')}}">
+						</div>
+
+						<div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
+					    	<input type="text" class="form-control form-control-white" id="mobile" name="mobile" maxlength="10" placeholder="Mobile" required value="{{old('mobile')}}">
+						</div>
+
+						<div class="form-group{{ $errors->has('sex') ? ' has-error' : '' }}">
+						
+							<input type="radio" name="sex" value="1">&nbsp;Male &nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="radio" name="sex" value="0">&nbsp;Female
 						</div>
 
 						<div id="oldCollege" class="form-group">
@@ -1282,8 +1296,6 @@
 
 					    	<a href="" onclick="event.preventDefault(); document.getElementById('oldCollege').style.display='block'; document.getElementById('newCollege').style.display='none';"><i>Cancel</i></a>
 						</div>
-
-					    
 						
 						<div class="form-group{{ $errors->has('Blr_clg') ? ' has-error' : '' }}">
 						
@@ -1291,6 +1303,7 @@
 							<input type="radio" name="Blr_clg" value="1">&nbsp;Yes &nbsp;&nbsp;&nbsp;&nbsp;
 							<input type="radio" name="Blr_clg" value="0">&nbsp;No
 						</div>
+
 					    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 					    	<input type="password" class="form-control form-control-white" id="password" name="password" placeholder="Password" required>
 						</div>
@@ -1310,10 +1323,11 @@
 						<li><i class="fa fa-check"></i>Event starts on <strong>6 September 2018</strong>.</li><br>
 						<li><i class="fa fa-check"></i>Maximum of 20 participants per college.</li><br>
                         <li><i class="fa fa-check"></i>Participants are required to carry their college ID cards.</li><br>
-                        <li><i class="fa fa-check"></i>Participants are required to get their Tickets from <strong><i>TheCollegeFever.com</i></strong> using the provided link. They can then proceed to register for a Gateways account, where information about all the events is provided. Participants can then enroll for events of their choice, provided the rules for those events are adhered to.</li><br>
+                        {{-- <li><i class="fa fa-check"></i>Participants are required to get their Tickets from <strong><i>TheCollegeFever.com</i></strong> using the provided link. They can then proceed to register for a Gateways account, where information about all the events is provided. Participants can then enroll for events of their choice, provided the rules for those events are adhered to.</li><br> --}}
+                        <li><i class="fa fa-check"></i>Participants who register will get access to a Gateways account, where information about all the events is provided. Participants can then enroll for events of their choice, provided the rules for those events are adhered to</li><br>
                         <li><i class="fa fa-check"></i>Laptops, pen drives or cameras needed for the events must be carried by the participants.</li><br>
                         <li><i class="fa fa-check"></i>Registration fee of Rs.100 per participant is to be paid. The fee will not be refunded in any case.</li><br>
-                        <li><i class="fa fa-check"></i>Registration can be done on the spot or online, via the app or the website, on or before 6 September 2018. Those who wish to register on the spot must be present at the venue at 7:30am on 6 September 2018.</li><br>
+                        <li><i class="fa fa-check"></i>Registration can be done on the spot, via the app or the website. Registration fee shall be paid on the spot. Participants must be present at the venue at 7:30am on 6 September 2018 for registration.</li><br>
                         <li><i class="fa fa-check"></i>Outstation students should inform the fest organizers about accommodation requirements before 4 September 2018.</li><br>
                         <li><i class="fa fa-check"></i>Participants must report at the venue 15 mins prior to the event time.</li><br>
 					</ul>

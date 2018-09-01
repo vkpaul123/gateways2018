@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\College;
 use App\Http\Controllers\Controller;
 use App\Student;
 use App\Team;
@@ -52,8 +53,11 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'password' => 'required|string|min:6|confirmed',
+            'name' => 'required',
+            'mobile' => 'required|numeric',
             'email' => 'required|email',
             'Blr_clg' => 'required',
+            'sex' => 'required',
         ]);
     }
 
@@ -65,29 +69,63 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $student = Student::where('email', $data['email'])->get()->first();
+        // $student = Student::where('email', $data['email'])->get()->first();
     
-        $student->isLocalite = $data['Blr_clg'];
+        // $student->isLocalite = $data['Blr_clg'];
+        // $student->password = bcrypt($data['password']);
+        // $student->registHash = Hash::make($student->email);
+
+        // $teamExist = Student::where('college_id', $student->college_id)->get()->first();
+        // if(isset($teamExist)) {
+        //     $student->team = $teamExist->team;
+        // } else {
+        //     $team = Team::first();
+        //     $student->team = $team->name;
+        //     Team::where('name', $team->name)->delete();
+        // }
+
+        // $student->save();
+
+        // return $student;
+        
+        $student = new Student;
+        $student->name = $data['name'];
+        $student->mobile = $data['mobile'];
+        $student->sex = $data['sex'];
+        $student->email = $data['email'];
         $student->password = bcrypt($data['password']);
         $student->registHash = Hash::make($student->email);
 
-        $teamExist = Student::where('college_id', $student->college_id)->get()->first();
-        if(isset($teamExist)) {
-            $student->team = $teamExist->team;
+        if(!isset($data['college_id'])) {
+            $college = new College;
+            $college->name = $data['college_name'] . ', ' . $data['college_place'];
+            $college->save();
+
+            $student->college_id = College::where('name', $college->name)->get()->first()->id;
+
+            $student->team = Team::first()->name;
+            Team::where('name', $student->team)->delete();
         } else {
-            $team = Team::first();
-            $student->team = $team->name;
-            Team::where('name', $team->name)->delete();
+            $student->college_id = $data['college_id'];
+            $teamExist = Student::where('college_id', $student->college_id)->get()->first();
+            if(isset($teamExist)) {
+                $student->team = $teamExist->team;
+            } else {
+                $student->team = Team::first()->name;
+                Team::where('name', $student->team)->delete();
+            }
         }
 
         $student->save();
 
         return $student;
-        
 
         // return Student::create([
         //     'name' => $data['name'],
         //     'email' => $data['email'],
+        //     'mobile' => $data['mobile'],
+        //     'isLocalite' => $data['Blr_clg'],
+        //     'sex' => $data['sex'],
         //     'password' => bcrypt($data['password']),
         // ]);
     }

@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Dashboard
-                    <div class="pull-right"><strong>Ticket ID:</strong> &nbsp; {{ Auth::user()->ticket_id }}</div>
+                    {{-- <div class="pull-right"><strong>Ticket ID:</strong> &nbsp; {{ Auth::user()->ticket_id }}</div> --}}
                 </div>
 
                 <div class="panel-body">
