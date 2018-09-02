@@ -71,69 +71,21 @@
             <img src="{{ asset('nevada/nevada1/logoss/gateways-font.png') }}" alt="" class="img img-responsive col-md-8 col-md-offset-2">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">Login</div>
-
-                        <div class="panel-body">
-                            <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                                {{ csrf_field() }}
-
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                                    <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                        @if ($errors->has('email'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('email') }} Also make sure your account is activated.</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                    <label for="password" class="col-md-4 control-label">Password</label>
-
-                                    <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control" name="password" required>
-
-                                        @if ($errors->has('password'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('password') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-8 col-md-offset-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            Login
-                                        </button>
-                                    </div>
-                                </div>
-
-                                {{-- <hr>
-                                <div class="form-group">
-                                    <div class="col-md-8 col-md-offset-4">
-                                        <div class="pull-right">
-                                            <a href="/welcome#registration" onclick="alert('Use your Ticket ID to Register Again.');">Register &nbsp; | &nbsp; Forgot Password</a>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                            </form>
-                        </div>
+                    <div class="jumbotron">
+                        <center>
+                            <h3 class="text-danger">
+                                <i class="fa fa-exclamation-circle"></i><br>
+                                Error in Registration.
+                                <br>
+                            </h3>
+                            <h2>
+                                Email ID already activated! <br>
+                                <small>
+                                    This verification link associated to <strong class="text-info">{{ $email }}</strong> is <strong class="text-danger">Invalid</strong>!<br>
+                                    Please contact support for further assistance.
+                                </small>
+                            </h2>
+                        </center>
                     </div>
                 </div>
             </div>

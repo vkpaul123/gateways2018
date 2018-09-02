@@ -18,4 +18,13 @@ class PageController extends Controller
     	return view('index')
     	->with(compact('colleges'));
     }
+
+    public function verifyEmail($email)
+    {
+        return view('email.verifyEmail')->with(compact('email'));
+    }
+
+    public function invalidToken($email) {
+        return view('email.invalidToken')->with(compact('email'));
+    }
 }

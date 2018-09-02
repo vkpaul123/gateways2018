@@ -10,7 +10,7 @@ class Student extends Authenticatable
 	use Notifiable;
 
 	protected $fillable = [
-        'name', 'email', 'password', 'college', 'mobile', 'ticket_id', 'isLocalite', 'place', 'registHash', 'attend', 'amountPaid'
+        'name', 'email', 'password', 'college_id', 'mobile', 'isLocalite', 'sex', 'place', 'registHash', 'verifyToken'
     ];
 
     protected $hidden = [

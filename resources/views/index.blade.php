@@ -81,7 +81,7 @@
 		</div>
 		
 		<div id="gatewaysbanners">
-			<div id="header" class="content-block gateways" style="background-color: #00d5e6; opacity: 1; top: 0px;">
+			<div id="header" class="content-block gateways" style="background-color: #00d5e6; opacity: 1; top: 0px; z-index: 501;">
 				{{-- <section class="center"> --}}
 					{{-- <div class="secondary-slogan">
 						Department of Computer Science PG
@@ -103,10 +103,10 @@
 					<div class="slogan gateways2018Title" style="opacity: 1; z-index: 501;">
 						&nbsp;GATEWAYS 2018
 					</div>
-					<div class="secondary-slogan departmentOfCompSci" style="opacity: 1; z-index: 501;">
+					<div class="secondary-slogan departmentOfCompSci" style="opacity: 1;">
 						<strong>6 &amp; 7 September 2018 &nbsp;</strong>
 					</div>
-					<div class="secondary-slogan departmentOfCompSci" style="opacity: 1; z-index: 501;">
+					<div class="secondary-slogan departmentOfCompSci" style="opacity: 1;">
 						CHRIST (Deemed to be University), &nbsp;<br>Main Campus 
 					</div>
 				</section>
@@ -815,12 +815,11 @@
 													<td class="warning">808, 8TH FLOOR, CENTRAL BLOCK</td>
 													<td></td>
 													<td></td>
+													<td class="warning" colspan="2">GAMING</td>
+													<td class="danger"></td>
 													<td class="warning">EVENT X</td>
 													<td></td>
-													<td class="danger"></td>
-													<td class="warning" colspan="2">EVENT X</td>
-													<td></td>
-													<td></td>
+													<td class="warning" colspan='2'>EVENT X</td>
 													<td></td>
 												</tr>
 															 
@@ -839,20 +838,19 @@
 													<td class="warning">BCA LAB, 1ST FLOOR, 2ND BLOCK</td>
 													<td></td>
 													<td></td>
-													<td class="warning" >CODING & DEBUGGING</td>
-													<td></td>
+													<td class="warning" colspan="2">GAMING</td>
 													<td class="danger"></td>
-													<td class="warning" colspan="2">CODING & DEBUGGING</td>
+													<td class="warning">CODING & DEBUGGING</td>
 													<td></td>
-													<td></td>
-													<td></td>
+													<td class="warning" colspan="3">CODING & DEBUGGING</td>
 												</tr>
 															  
 												<tr class="success">
 													<td class="warning">MCA & BSc LAB, 1ST FLOOR, 2ND BLOCK</td>
 													<td></td>
 													<td></td>
-													<td class="warning" colspan="2">GAMING</td>
+													<td></td>
+													<td></td>
 													<td class="danger"></td>
 													<td class="warning" colspan="5">GAMING</td>
 												</tr>
@@ -926,7 +924,7 @@
 												</tr>
 														  
 												<tr class="success">
-													<td class="warning">808, 8TH FLOOR, CENTRAL BLOCK</td>
+													<td class="warning">813, 8TH FLOOR, CENTRAL BLOCK</td>
 													<td class="warning" colspan="4" >AD-MAKING</td>
 													<td class="danger"></td>
 													<td class="warning">AD-MAKING FINALS</td>
@@ -1404,8 +1402,8 @@ jQuery('.select2').select2();
 
 if (screen.width > 992) {
 	jQuery('.gateways').fadeOut(8500);
-	jQuery('.departmentOfCompSci').fadeIn(3000);
-	jQuery('.gateways2018Title').fadeIn(6000);
+	// jQuery('.departmentOfCompSci').fadeIn(3000);
+	// jQuery('.gateways2018Title').fadeIn(6000);
 
 	jQuery('.departmentOfCompSci2').css('padding-top', (screen.height - screen.height*0.4).toString()+'px');
 	jQuery('#infoOnMobile').css('display', 'none');

@@ -4,12 +4,16 @@ namespace App\Http\Controllers\Auth;
 
 use App\College;
 use App\Http\Controllers\Controller;
+use App\Mail\VerifyEmail;
 use App\Student;
 use App\Team;
-use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -116,7 +120,13 @@ class RegisterController extends Controller
             }
         }
 
+        $student->verifyToken = Str::random(40);
+
         $student->save();
+
+        $thisUser = Student::findOrFail($student->id);
+
+        $this->sendEmail($thisUser);
 
         return $student;
 
@@ -128,5 +138,35 @@ class RegisterController extends Controller
         //     'sex' => $data['sex'],
         //     'password' => bcrypt($data['password']),
         // ]);
+    }
+
+    public function sendEmail($thisUser)
+    {
+        Mail::to($thisUser['email'])->send(new VerifyEmail($thisUser));
+    }
+
+    public function sendEmailDone($email, $verifyToken)
+    {
+        $student = Student::where(['email' => $email, 'verifyToken' => $verifyToken])->get()->first();
+        if(isset($student)) {
+            Student::where(['email' => $email, 'verifyToken' => $verifyToken])
+            ->update(['status' => '1', 'verifyToken' => NULL]);
+            Session::flash('message', 'Account Activated Successfully!');
+            // return redirect(route('login'));
+            $this->guard()->login($student);
+        }
+        else {
+            return redirect(route('invalidToken', $email));
+        }
+    }
+
+    /**
+     * Get the guard to be used during registration.
+     *
+     * @return \Illuminate\Contracts\Auth\StatefulGuard
+     */
+    protected function guard()
+    {
+        return Auth::guard();
     }
 }

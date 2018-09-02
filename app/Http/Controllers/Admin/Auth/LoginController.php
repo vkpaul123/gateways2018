@@ -46,7 +46,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('adminPages.auth.login');
+        return view('Eventheads.auth.login');
     }
 
     /**

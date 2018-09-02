@@ -117,6 +117,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::get('/verifyEmail/{email}', 'PageController@verifyEmail')->name('verifyEmail');
+Route::get('verify/{email}/{verifyToken}', 'Auth\RegisterController@sendEmailDone')->name('sendEmailDone.user');
+Route::get('verifyEmailFirst/{email}/invalid','PageController@invalidToken')->name('invalidToken');
 
 
 

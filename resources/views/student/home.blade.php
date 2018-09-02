@@ -126,7 +126,7 @@
                                                         
                                                         <div class="container-fluid">
                                                             <div class="row">
-                                                                <a href="" class="btn btn-block btn-success"><strong>Enroll</strong></a>
+                                                                <a href="" class="btn btn-block btn-success disabled"><strong>Enroll</strong></a>
                                                             </div>
                                                         </div>
                                                     </div>

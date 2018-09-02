@@ -41,7 +41,9 @@ class CreateStudentsTable extends Migration
             // $table->boolean('foodHash2Attend')->default(false);
 
             $table->string('registHash')->nullable();
-            // $table->boolean('attend')->default(false);
+            $table->boolean('status')->default(false);
+            $table->string('verifyToken')->nullable();
+            
             // $table->boolean('registered')->default(false);
 
             $table->timestamps();
