@@ -154,6 +154,8 @@ class RegisterController extends Controller
             Session::flash('message', 'Account Activated Successfully!');
             // return redirect(route('login'));
             $this->guard()->login($student);
+
+            return redirect(route('login'));
         }
         else {
             return redirect(route('invalidToken', $email));

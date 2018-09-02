@@ -107,7 +107,7 @@
                                                             </center>
                                                         <hr>
                                                         Location: <strong>{{ $event->location }}</strong> <br>
-                                                        Time: <strong>{{ $event->time }}</strong> <br>
+                                                        Time: <strong>{!! $event->time !!}</strong> <br>
                                                         Event Type: 
                                                                     @if ($event->if_team)
                                                                         <strong>
