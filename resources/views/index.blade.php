@@ -1284,7 +1284,7 @@
 				                
 							</select>
 
-							<a href="" onclick="event.preventDefault(); document.getElementById('newCollege').style.display='block'; document.getElementById('oldCollege').style.display = 'none';"><i>Cannot Find your College?</i></a>
+							<a href="" onclick="event.preventDefault(); document.getElementById('newCollege').style.display='block'; document.getElementById('oldCollege').style.display = 'none'; document.getElementById('college_id').value = '';"><i>Cannot Find your College?</i></a>
 						</div>
 						
 					    <div id="newCollege" class="form-group{{ $errors->has('college_name') ? ' has-error' : '' }}" style="display: none;">
@@ -1292,7 +1292,7 @@
 
 					    	<input type="text" class="form-control form-control-white" id="college_place" name="college_place" placeholder="Place" value="{{old('college_place')}}">
 
-					    	<a href="" onclick="event.preventDefault(); document.getElementById('oldCollege').style.display='block'; document.getElementById('newCollege').style.display='none';"><i>Cancel</i></a>
+					    	<a href="" onclick="event.preventDefault(); document.getElementById('oldCollege').style.display='block'; document.getElementById('newCollege').style.display='none'; document.getElementById('college_name').value=null; document.getElementById('college_place').value=null; "><i>Cancel</i></a>
 						</div>
 						
 						<div class="form-group{{ $errors->has('Blr_clg') ? ' has-error' : '' }}">

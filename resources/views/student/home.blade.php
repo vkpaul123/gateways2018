@@ -14,7 +14,7 @@
                 <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>
             </div>
             @endif --}}
-            
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Dashboard
@@ -42,7 +42,7 @@
                             {!! QrCode::size(150)->generate(Auth::user()->registHash); !!}
                         </center>
                         <div class="panel panel-info">
-                            <div class="panel-heading"><strong>My Team</strong></div>
+                            <div class="panel-heading"><strong>Team Name</strong></div>
 
                             <div class="panel-body">
                                 <h3 class="text-primary text-center">
