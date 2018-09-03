@@ -680,15 +680,13 @@
 							</p>
 							<h4>Rules:</h4>
 					  		<p><ul>
-					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Each team can have a maximum of 2 members.</li>
-					  				<br>
+					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Each team should have 2 members.</li><br>
+					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Each college can have maximum 2 teams.</li><br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Teams will be given 10-15 mins to discuss on the product before pitching the idea.</li>
 									<br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Any changes in the event details would be informed on spot.</li>
 									<br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Each team must stick to the time limit.</li>
-									<br>
-									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; The decision of the judges will be considered as the final decision.</li>
 									<br>
 					  		</ul></p>
 						</div><!--medal-body-->
