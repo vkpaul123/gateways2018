@@ -20,7 +20,7 @@ class StudentController extends Controller
 	//	CREATE A NEW STUDENT
     public function createStudent(Request $request) {
     	$response = null;
-    	try {
+    	// try {
             $payload = json_decode(utf8_encode($request->getContent()), true);
     		$studentCountInCollege = Student::where('college_id', $payload['college_id'])->get()->count();
 
@@ -78,18 +78,18 @@ class StudentController extends Controller
 
     			return json_encode($response);
     		}
-    	} catch (\Exception $e) {
-    		$response = [
-    			'code' => '-2',
-    			'status' => 'Error',
-    			'description' => 'Error in adding a new Student. Already exists',
-    			'e' => $e,
-                'payload' => $payload,
-                'student' => $student
-    		];
+    	// } catch (\Exception $e) {
+    	// 	$response = [
+    	// 		'code' => '-2',
+    	// 		'status' => 'Error',
+    	// 		'description' => 'Error in adding a new Student. Already exists',
+    	// 		'e' => $e,
+     //            'payload' => $payload,
+     //            'student' => $student
+    	// 	];
 
-    		return json_encode($response);
-    	}
+    	// 	return json_encode($response);
+    	// }
     }
 
     public function sendEmail($thisUser)

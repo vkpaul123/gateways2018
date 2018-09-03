@@ -479,7 +479,7 @@
 									<br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Caption is mandatory. (NOTE - CAPTION & TOPIC are different, caption will describe the story of the picture and picture must be taken based on TOPIC).</li>
 									<br>
-									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; One participates can submit only one picture for contest with ORIGINAL AND EDITIED FILES.</li>
+									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; One participant can submit only one picture for contest with ORIGINAL AND EDITIED FILES.</li>
 									<br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Topic and time limit will be introduced at the time of INAUGRATION CEREMONY.</li>
 									<br>
@@ -657,7 +657,7 @@
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Max of 3 members in a team.</li><br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants are required to bring their own laptops and necessary accessories.</li><br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Pre-built projects won’t be entertained.</li><br>
-									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participates of this event won’t be able to participate in any other event.</li><br>
+									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants of this event won’t be able to participate in any other event.</li><br>
 					  		</ul></p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
