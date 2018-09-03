@@ -118,8 +118,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/verifyEmail/{email}', 'PageController@verifyEmail')->name('verifyEmail');
+Route::get('/emailVerified/{email}/app', 'PageController@emailVerified')->name('emailVerified');
 Route::get('verify/{email}/{verifyToken}', 'Auth\RegisterController@sendEmailDone')->name('sendEmailDone.user');
+Route::get('verify/{email}/{verifyToken}/app', 'StudentController@sendEmailDoneApp')->name('sendEmailDoneApp.user');
+
 Route::get('verifyEmailFirst/{email}/invalid','PageController@invalidToken')->name('invalidToken');
+Route::get('verifyEmailFirst/{email}/invalid/app','PageController@invalidTokenApp')->name('invalidTokenApp');
 
 
 

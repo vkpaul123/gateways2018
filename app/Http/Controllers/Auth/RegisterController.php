@@ -151,7 +151,7 @@ class RegisterController extends Controller
         if(isset($student)) {
             Student::where(['email' => $email, 'verifyToken' => $verifyToken])
             ->update(['status' => '1', 'verifyToken' => NULL]);
-            Session::flash('message', 'Account Activated Successfully!');
+            // Session::flash('message', 'Account Activated Successfully!');
             // return redirect(route('login'));
             $this->guard()->login($student);
 

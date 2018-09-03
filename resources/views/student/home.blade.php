@@ -5,6 +5,16 @@
 <div class="container-fluid" style="padding-top: 110px;">
     <div class="row">
         <div class="col-md-12">
+            
+            {{-- @if(Session::has('message'))
+            <div class="alert alert-success">
+                Account Activated Successfully!
+
+                {!! Session::get('message') !!}
+                <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>
+            </div>
+            @endif --}}
+            
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Dashboard
@@ -154,4 +164,18 @@
         </div>
     </div>
 </div>
+
+@endsection
+
+
+@section('pageSpecificScripts')
+
+@if (Session::has('message'))
+    <script type="text/javascript">
+        jQuery(window).on('load',function(){
+            jQuery('#myModal3').modal({backdrop: "static"});
+        });
+    </script>
+@endif
+
 @endsection

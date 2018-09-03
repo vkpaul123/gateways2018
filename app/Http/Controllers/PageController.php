@@ -27,4 +27,9 @@ class PageController extends Controller
     public function invalidToken($email) {
         return view('email.invalidToken')->with(compact('email'));
     }
+
+    public function emailVerified($email)
+    {
+        return view('email.emailVerifiedApp')->with(compact('email'));
+    }
 }

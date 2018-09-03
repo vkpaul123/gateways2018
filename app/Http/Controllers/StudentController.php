@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\College;
+use App\Mail\VerifyEmailApp;
 use App\Student;
 use App\StudentEvents;
 use App\Team;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
 
@@ -46,7 +48,14 @@ class StudentController extends Controller
                 $student->registHash = Hash::make($student->email);
 
     			// return $student;
+
+                $student->verifyToken = Str::random(40);
+
 				$student->save();
+
+                $thisUser = Student::findOrFail($student->id);
+
+                $this->sendEmail($thisUser);
 
                 $student_curr = Student::where('email', $payload['email'])->get()->first();
     			
@@ -80,6 +89,28 @@ class StudentController extends Controller
 
     		return json_encode($response);
     	}
+    }
+
+    public function sendEmail($thisUser)
+    {
+        Mail::to($thisUser['email'])->send(new VerifyEmailApp($thisUser));
+    }
+
+    public function sendEmailDoneApp($email, $verifyToken)
+    {
+        $student = Student::where(['email' => $email, 'verifyToken' => $verifyToken])->get()->first();
+        if(isset($student)) {
+            Student::where(['email' => $email, 'verifyToken' => $verifyToken])
+            ->update(['status' => '1', 'verifyToken' => NULL]);
+            // Session::flash('message', 'Account Activated Successfully!');
+            // return redirect(route('login'));
+            // $this->guard()->login($student);
+
+            return redirect(route('emailVerified', $email));
+        }
+        else {
+            return redirect(route('invalidToken', $email));
+        }
     }
 
     public function registerStudentTFC(Request $request)
@@ -232,20 +263,32 @@ class StudentController extends Controller
     //	LOG IN STUDENT
     public function logInStudent(Request $request)
     {
+        $payload = json_decode(utf8_encode($request->getContent()), true);
+
     	$response = null;
     	try {
     		$studentFound = false;
-    		$student = Student::where('email', $request->email)->get()->first();
+    		$student = Student::where('email', $payload['email'])->get()->first();
 
     		if(isset($student)) {
-	    		if(Hash::check($request->password, $student->password)) {
-                    $response = [
-                        'code' => '4',
-                        'status' => 'OK',
-                        'description' => 'Log in successful',
-                        'student_id' => $student->id
-                    ];
-                    return json_encode($response);
+	    		if(Hash::check($payload['password'], $student->password)) {
+                    if($student->status == 1) {
+                        $response = [
+                            'code' => '4',
+                            'status' => 'OK',
+                            'description' => 'Log in successful',
+                            'student_id' => $student->id
+                        ];
+                        
+                        return json_encode($response);
+                    } else {
+                        $response = [
+                            'code' => '-5',
+                            'status' => 'Error',
+                            'description' => 'Error in Log in. Account Not active'
+                        ];
+                        return json_encode($response);    
+                    }
 	    		} else {
 	    			$response = [
 	    				'code' => '-5',
