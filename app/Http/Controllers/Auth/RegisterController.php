@@ -75,7 +75,6 @@ class RegisterController extends Controller
     {
         // $student = Student::where('email', $data['email'])->get()->first();
     
-        // $student->isLocalite = $data['Blr_clg'];
         // $student->password = bcrypt($data['password']);
         // $student->registHash = Hash::make($student->email);
 
@@ -96,6 +95,7 @@ class RegisterController extends Controller
         $student->name = $data['name'];
         $student->mobile = $data['mobile'];
         $student->sex = $data['sex'];
+        $student->isLocalite = $data['Blr_clg'];
         $student->email = $data['email'];
         $student->password = bcrypt($data['password']);
         $student->registHash = Hash::make($student->email);

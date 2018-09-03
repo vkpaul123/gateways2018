@@ -68,7 +68,7 @@ Route::post('/eventHead/logIn', 'EventheadController@logInEventHead');
 
 
 //										STUDENT
-//	Add New Student 		PARAM: college_id(int), name(string), roll(string), mobile(string), isLocalite(boolean), email(string), password(string)
+//	Add New Student 		PARAM: (college_id(int)) OR (college_name(string) AND college_place(string)), name(string), sex(boolean), mobile(string), isLocalite(boolean), email(string), password(string)
 Route::post('/students/input/addNew', 'StudentController@createStudent');
 
 //	Get a particular student details 	PARAM: 'student_id' as id(int)

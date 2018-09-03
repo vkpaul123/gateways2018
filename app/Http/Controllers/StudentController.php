@@ -18,18 +18,27 @@ class StudentController extends Controller
     public function createStudent(Request $request) {
     	$response = null;
     	try {
-            $payload = json_decode($request->getContent(), true);
+            $payload = json_decode(utf8_encode($request->getContent()), true);
     		$studentCountInCollege = Student::where('college_id', $payload['college_id'])->get()->count();
 
-    		if($studentCountInCollege < 15) {
+    		if($studentCountInCollege < 20) {
                 $student = new Student;
 
-                $student->college_id = $payload['college_id'];
+                if(!($payload['college_id'] == null || $payload['college_id'] == ''))
+                    $student->college_id = $payload['college_id'];
+                else {
+                    $college = new College;
+                    $college->name = $payload['college_name'] . ', ' . $payload['college_place'];
+                    $college->save();
+
+                    $student->college_id = $college->id;
+                }
 
                 $student->name = $payload['name'];                
-                $student->roll = $payload['roll'];                
+                // $student->roll = $payload['roll'];                
                 $student->mobile = $payload['mobile'];
                 $student->isLocalite = ($payload['isLocalite'] == 'true') ? 1 : 0;            
+                $student->sex = ($payload['sex'] == 'true') ? 1 : 0;            
                 
                 $student->email = $payload['email'];              
                 $student->password = Hash::make($payload['password']);
@@ -54,7 +63,7 @@ class StudentController extends Controller
     			$response = [
     				'code' => '-3',
     				'status' => 'Error',
-    				'description' => 'Error in adding a new Student. College Participation Limit 15 reached'
+    				'description' => 'Error in adding a new Student. College Participation Limit 20 reached'
     			];
 
     			return json_encode($response);
