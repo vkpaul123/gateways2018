@@ -52,11 +52,11 @@ class StudentController extends Controller
     			// return $student;
 
                 $student->verifyToken = Str::random(40);
-                return $student;
+                // return $student;
 				$student->save();
 
                 $thisUser = Student::findOrFail($student->id);
-
+                return $thisUser;
                 $this->sendEmail($thisUser);
 
                 // $student_curr = Student::where('email', $payload['email'])->get()->first();
