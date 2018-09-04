@@ -271,7 +271,7 @@ class StudentController extends Controller
     	$response = null;
     	try {
     		$studentFound = false;
-    		$student = Student::where('email', $payload['email'])->get()->first();
+    		$student = Student::where('email', $payload['email'])->get();
 
     		if(isset($student)) {
 	    		if(Hash::check($payload['password'], $student->password)) {
