@@ -212,14 +212,14 @@ class StudentController extends Controller
                     'description' => 'Successfully found Student',
                     'student' => $student
                 ];
-                return json_encode($response);
+                return Response::json($response, 200);
             } else {
                 $response = [
                     'code' => '-3',
                     'status' => 'Error',
                     'description' => 'Student Not Found! Invalid ID.'
                 ];
-                return json_encode($response);
+                return Response::json($response, 200);
             }
         } catch (\Exception $e) {
             $response = [
@@ -229,7 +229,7 @@ class StudentController extends Controller
                 'e' => $e
             ];
 
-            return json_encode($response);
+            return Response::json($response, 200);
         }
     }
 
@@ -283,14 +283,14 @@ class StudentController extends Controller
                             'student_id' => $student->id
                         ];
                         
-                        return json_encode($response);
+                        return Response::json($response, 200);
                     } else {
                         $response = [
                             'code' => '-5',
                             'status' => 'Error',
                             'description' => 'Error in Log in. Account Not active'
                         ];
-                        return json_encode($response);    
+                        return Response::json($response, 200);    
                     }
 	    		} else {
 	    			$response = [
@@ -298,7 +298,7 @@ class StudentController extends Controller
 	    				'status' => 'Error',
 	    				'description' => 'Error in Log in. password does not match'
 	    			];
-	    			return json_encode($response);
+	    			return Response::json($response, 200);
 	    		}
     			
     		} else {
@@ -307,7 +307,7 @@ class StudentController extends Controller
     				'status' => 'Error',
     				'description' => 'Error in Log in. Email does not exist.'
     			];
-    			return json_encode($response);
+    			return Response::json($response, 200);
     		}
     	} catch(\Exception $e) {
     		$response = [
@@ -316,7 +316,7 @@ class StudentController extends Controller
 				'description' => 'Some other error in Logging in',
 				'e' => $e
 			];
-			return json_encode($response);
+			return Response::json($response, 200);
     	}
     }
 
