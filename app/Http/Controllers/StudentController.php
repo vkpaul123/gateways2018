@@ -58,14 +58,14 @@ class StudentController extends Controller
 
                 $this->sendEmail($thisUser);
 
-                $student_curr = Student::where('email', $payload['email'])->get()->first();
+                // $student_curr = Student::where('email', $payload['email'])->get()->first();
     			
 				$response = [
 					'code' => '2',
 					'status' => 'OK',
 					'description' => 'Successfully added a new Student',
-                    'student_id' => $student_curr->id,
-                    'qrCodeHash' => $student_curr->registHash
+                    'student_id' => $thisUser->id,
+                    'qrCodeHash' => $thisUser->registHash
 				];
 
 				return json_encode($response);
