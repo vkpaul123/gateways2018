@@ -69,7 +69,8 @@ class StudentController extends Controller
                     'qrCodeHash' => $thisUser->registHash
 				];
 
-				return ($response);
+                // return $response;
+				return Response::json($response, 201);
     		} else {
     			$response = [
     				'code' => '-3',
