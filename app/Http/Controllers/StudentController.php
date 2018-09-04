@@ -22,9 +22,9 @@ class StudentController extends Controller
     	$response = null;
     	// try {
             $payload = json_decode(utf8_encode($request->getContent()), true);
-            return $payload;
+            // return $payload;
     		$studentCountInCollege = Student::where('college_id', $payload['college_id'])->get()->count();
-
+            return $studentCountInCollege;
     		if($studentCountInCollege < 20) {
                 $student = new Student;
 
