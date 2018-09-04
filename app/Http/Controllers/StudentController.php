@@ -56,7 +56,7 @@ class StudentController extends Controller
 				$student->save();
 
                 $thisUser = Student::findOrFail($student->id);
-                return $thisUser;
+                // return $thisUser;
                 $this->sendEmail($thisUser);
 
                 // $student_curr = Student::where('email', $payload['email'])->get()->first();
@@ -69,7 +69,7 @@ class StudentController extends Controller
                     'qrCodeHash' => $thisUser->registHash
 				];
 
-				return json_encode($response);
+				return ($response);
     		} else {
     			$response = [
     				'code' => '-3',
