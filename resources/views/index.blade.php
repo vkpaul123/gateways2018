@@ -23,7 +23,6 @@
 		width: 100%;
 		height: 100%;
 	}
-
 	#video .iframe .gateways .gateways2 {
 		position: absolute;
 		top: 0;
@@ -31,13 +30,11 @@
 		width: 100%;
 		height: 100%;
 	}
-
 	.WebContainer{
 	    width:100%;
 	    min-width:1000px;
 	    height:auto;
 	}
-
 	[class^='select2'] {
 		border-radius: 0px !important;
 	}
@@ -142,18 +139,14 @@
 			document.getElementById('gatewaysbanners').style.display = "none";
 			
 			var link = document.getElementById('mobileLink').value;
-
 			document.getElementById('video_background').style.height = "250%";
 			document.getElementById('video_background').style.width = "100%";
-
 			document.getElementById('video_background').innerHTML = '<img style="width:100%" src="'+ link +'" alt="gif">';
 			// document.getElementById('video_background').innerHTML = '<source src="'+ link +'">';
-
 			// var vid = document.getElementById('video_background');
 			// vid.addEventListener('click', function () {
 			// 	vid.play();
 			// });
-
 		} else {
 			document.getElementById('video_background').style.display = "none";
 		}
@@ -313,7 +306,6 @@
 			document.getElementById("disp_x4").style.height = "auto";
 		} 
 	}
-
 </script>
 
 <div class="content-block" id="portfolio" style="background-color: #cccc;">
@@ -625,9 +617,9 @@
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Maximum of 2 teams per college.</li><br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Systems will be provided.</li><br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Internet usage is strictly prohibited.</li><br>
-									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants can code in any of the following languages: C, C++, Java or Python.</li><br>
-									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Time taken to solve each problem will be noted.</li><br>
-									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; The lines of code and logic used will be noted.</li><br>
+									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants can code in any of the following languages: C / Java.</li><br>
+									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Time taken and lines of code will be noted.</li><br>
+									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; If there is a tie, above mentioned rule will be the deciding factor.</li><br>
 					  		</ul></p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
@@ -680,13 +672,15 @@
 							</p>
 							<h4>Rules:</h4>
 					  		<p><ul>
-					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Each team should have 2 members.</li><br>
-					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Each college can have maximum 2 teams.</li><br>
+					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Each team should have 2 members.</li>
+					  				<br>
+									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Each college can have a maximum of 2 teams.</li>
+					  				<br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Teams will be given 10-15 mins to discuss on the product before pitching the idea.</li>
 									<br>
-									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Any changes in the event details would be informed on spot.</li>
+									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Any changes in the event details would be informed on the spot.</li>
 									<br>
-									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Each team must stick to the time limit.</li>
+									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Each team must stick to the time limit specified.</li>
 									<br>
 					  		</ul></p>
 						</div><!--medal-body-->
@@ -813,11 +807,12 @@
 													<td class="warning">808, 8TH FLOOR, CENTRAL BLOCK</td>
 													<td></td>
 													<td></td>
-													<td class="warning" colspan="2">GAMING</td>
+													<td class="warning" colspan="2">APP PROTOTYPING</td>
 													<td class="danger"></td>
-													<td class="warning">EVENT X</td>
 													<td></td>
-													<td class="warning" colspan='2'>EVENT X</td>
+													<td></td>
+													<td></td>
+													<td></td>
 													<td></td>
 												</tr>
 															 
@@ -857,9 +852,22 @@
 													<td class="warning">IT LAB, 1ST FLOOR, 2ND BLOCK</td>
 													<td></td>
 													<td></td>
-													<td class="warning" colspan="2">APP PROTOTYPING</td>
+													<td class="warning" colspan="2">GAMING</td>
 													<td class="danger"></td>
 													<td class="warning" colspan="3">TREASURE HUNT</td>
+													<td></td>
+													<td></td>
+												</tr>
+												<tr class="success">
+													<td class="warning">DHARMARAM GROUND</td>
+													<td></td>
+													<td></td>
+													<td class="warning">EVENT X</td>
+													<td></td>
+													<td class="danger"></td>
+													<td class="warning">EVENT X</td>
+													<td></td>
+													<td></td>
 													<td></td>
 													<td></td>
 												</tr>
@@ -1091,7 +1099,6 @@
 			document.getElementById("campus_ins3").style.height = "auto";
 		}
 	}
-
 </script>
 
 <div class="content-block" id="testimonials" style="background-color: #cccc;">
@@ -1240,7 +1247,6 @@
 						{{-- <div class="form-group">
 							<h4 style="color: #fff; font-style: italic;">Ticket Please...</h4>
 						</div>
-
 						<div class="form-group">
 							<a href="{{ url('https://www.thecollegefever.com/events/gateways') }}" class="text-center btn btn-o-white btn-lg" target="_blank" disabled onclick="event.preventDefault(); alert('Registrations Opening Shortly.');"><strong><i class="fa fa-ticket"></i> Get Your Ticket</strong></a>
 						</div> --}}
@@ -1386,7 +1392,6 @@
 <script src="{{ asset('js/select2.full.min.js') }}"></script>
 
 <script>	
-
 // Event button
 const $elems = document.querySelectorAll('.recent-button a')
 var elems = Array.from($elems)
@@ -1395,20 +1400,16 @@ elems.map(a => {
 	e.preventDefault()
 	}
 });
-
 jQuery('.select2').select2();
-
 if (screen.width > 992) {
 	jQuery('.gateways').fadeOut(8500);
 	// jQuery('.departmentOfCompSci').fadeIn(3000);
 	// jQuery('.gateways2018Title').fadeIn(6000);
-
 	jQuery('.departmentOfCompSci2').css('padding-top', (screen.height - screen.height*0.4).toString()+'px');
 	jQuery('#infoOnMobile').css('display', 'none');
 } else {
 	jQuery('#parallax').css('margin-top', '250px');
 }
-
 </script>
 
 @if (count($errors) > 0)
@@ -1430,12 +1431,8 @@ if (screen.width > 992) {
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("Sep 6, 2018 09:00:00").getTime();
-
-
-
 // Update the count down every 1 second
 var x = setInterval(function() {
-
     // Get todays date and time
     var now = new Date().getTime();
     
@@ -1457,9 +1454,7 @@ var x = setInterval(function() {
         clearInterval(x);
         timeInnerHTML = "It has Begun!";
     }
-
     jQuery('.timeRemaining').html(timeInnerHTML);
-
 }, 1000);
 </script>
 
