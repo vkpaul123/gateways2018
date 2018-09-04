@@ -104,6 +104,11 @@ Route::post('/students/enrollment/self/un-enroll', 'StudentController@unrollStud
 //	Student show students events 	PARAM: student_id
 Route::get('/student/enrollment/get/{id}/details', 'StudentController@showStudentEvents');
 
+//	Show Schedule
+Route::get('/show/schedule',function() {
+	return view('schedule');
+});
+
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------
 //				DON'T TOUCH ANYTHING BELOW THIS
