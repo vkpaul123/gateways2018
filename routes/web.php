@@ -24,6 +24,9 @@ Route::post('/upload/XLSX-File/event', 'EventController@parseEventsxlsxFile')->n
 //	upload excel for teams
 Route::post('/upload/XLSX-File/teams', 'CollegeController@xlsxFileParserTeams')->name('uploadFile-xlsx-teams');
 
+//	upload excel for eventheads
+Route::post('/upload/XLSX-File/eventheads', 'EventheadController@xlsxFileParserEventheads')->name('uploadFile-xlsx-eventheads');
+
 //	API test to add student record from TheCollegeFever
 Route::get('/api/studentRecord/test/{name}/{college}/{email}/{mobile}/{ticket_id}/{place}/{amountPaid}', 'StudentController@registerStudentTest');
 

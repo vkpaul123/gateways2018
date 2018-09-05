@@ -127,7 +127,7 @@
 
 	<script src="{{ asset('nevada/nevada1/assets/js/jquery-2.1.3.min.js') }}"></script>
 	<script src="{{ asset('nevada/nevada1/assets/js/bootstrap.js') }}"></script>
-	<script src="{{ asset('js/app.js') }}"></script>	
+	{{-- <script src="{{ asset('js/app.js') }}"></script>	 --}}
 	<script src="{{ asset('nevada/nevada1/assets/js/jquery.actual.min.js') }}"></script>
 	<script src="{{ asset('nevada/nevada1/assets/js/jquery.scrollTo.min.js') }}"></script>
 	<script src="{{ asset('nevada/nevada1/assets/js/contact.js') }}"></script>

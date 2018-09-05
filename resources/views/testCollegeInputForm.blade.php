@@ -37,6 +37,13 @@
 		</pre>
 	</form>
 	<hr>
+	<form action="{{ route('uploadFile-xlsx-eventheads') }}" method="post" enctype="multipart/form-data">
+		<pre>
+			Eventheads
+
+			File Name: <input type="file" name="import_file_eventheads" id="import_file_eventheads">	<input type="submit">
+		</pre>
+	</form>
 	{!! QrCode::size(100)->generate('Make me into a QrCode!'); !!}
 </body>
 </html>

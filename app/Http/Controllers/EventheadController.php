@@ -6,6 +6,7 @@ use App\Event;
 use App\Eventheads;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class EventheadController extends Controller
 {
@@ -118,5 +119,78 @@ class EventheadController extends Controller
 			];
 			return json_encode($response);
     	}
+    }
+
+    public function xlsxFileParserEventheads(Request $request)
+    {
+        $response = null;
+        try {
+            if($request->hasFile('import_file_eventheads')) {
+                $path = $request->file('import_file_eventheads')->getRealPath();
+
+                $data = Excel::load($path, function($reader) {})->get([
+                    'name',
+                    'email',
+                    'password',
+                    'eventid',
+                ]);
+                
+                if(!empty($data) && $data->count()) {
+                    foreach ($data as $value) {
+                        if (!empty($value)) {
+                            foreach ($value as $key) {
+                                if($key == null) {
+                                    $response = [
+                                        'code' => '14',
+                                        'status' => 'Error',
+                                        'description' => 'Please Check your file. Some Fields are empty.',
+                                        'value' => $value
+                                    ];
+                                    return json_encode($response);
+                                }
+                            }
+                        }
+                    }
+                }
+                else {
+                    $response = [
+                        'code' => '14',
+                        'status' => 'Error',
+                        'description' => 'No Events found in the file! Please upload a valid file.'
+                    ];
+                    return json_encode($response);
+                }
+
+                if(!empty($data) && $data->count()){
+                    foreach ($data as $value) {
+                        if(!empty($value)) {
+                            $event = new Eventheads;
+                            $event->name = $value['name'];
+                            $event->email = $value['email'];
+                            $event->password = Hash::make($value['password']);
+                            $event->event_id = $value['eventid'];
+                            $event->save();
+                        }
+                    }
+                }
+                $response = [
+                    'code' => '14',
+                    'status' => 'OK',
+                    'description' => 'Eventheads imported Successfully.'
+                ];
+                return json_encode($response);
+            } else {
+                return 'error';
+            }
+        } catch (\Exception $e) {
+            $response = [
+                'code' => '-34',
+                'status' => 'Error',
+                'description' => 'Some other error while importing details for eventheads.',
+                'e' => $e
+            ];
+
+            return json_encode($response);
+        }
     }
 }
