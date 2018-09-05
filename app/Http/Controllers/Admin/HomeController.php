@@ -30,7 +30,7 @@ class HomeController extends Controller
 
             if(isset($students)) {
                 foreach ($students as $student) {
-                    $student->$student_id = Student::find($student->$student_id);
+                    $student->student_id = Student::find($student->student_id);
                 }
             }
 
@@ -47,5 +47,12 @@ class HomeController extends Controller
             return view('Eventheads.studentRegistration')
             ->with(compact('students'));
         }
+    }
+
+    public function markPresent($student_id, $event_id)
+    {
+        $student = StudentEvents::where('student_id', $student_id)->where('event_id', $event_id)->update(['attend' => 1]);
+
+        return redirect()->back();
     }
 }

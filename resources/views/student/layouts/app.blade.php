@@ -130,5 +130,8 @@
 	<script src="{{ asset('nevada/nevada1/assets/js/contact.js') }}"></script>
 	<script src="{{ asset('nevada/nevada1/assets/js/script.js') }}"></script>
 	<script src="{{ asset('nevada/nevada1/assets/js/smoothscroll.js') }}"></script>
+
+	@section('pageSpecificScripts')
+		@show
 </body>
 </html>

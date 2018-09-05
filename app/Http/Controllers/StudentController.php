@@ -922,4 +922,93 @@ class StudentController extends Controller
             return json_encode($response);
         } 
     }
+
+    public function enrollmentInEvent(Request $request)
+    {
+        $studentFeeCheck = Student::find($request->student_id);
+        if($studentFeeCheck->amountPaid != 0) {
+            if($request->event_id==1 || $request->event_id==9 || $request->event_id==12) {
+                $checkExisting = StudentEvents::where('student_id', $request->student_id)->get();
+                if($checkExisting->count() == 0) {
+                    $studentEvent = new StudentEvents;
+                    $studentEvent->student_id = $request->student_id;
+                    $studentEvent->event_id = $request->event_id;
+                    $studentEvent->enrollStatus = $request->enrollStatus;
+                    $studentEvent->subEvent = 'n/a';
+                    $studentEvent->save();
+
+                    return redirect()->back()
+                    ->with('messageSuccess', 'You have Successfully Enrolled in this event. Please go to the venue on time.');
+                } else {
+                    return redirect()->back()
+                    ->with('messageError', 'You have already enrolled in other Events. So, you are not allowed to enroll in this event!');
+                }
+            } else {
+                $checkSpecialEvents = StudentEvents::where(function($query) use($request) {
+                    $query->where('student_id', $request->student_id)
+                        ->where('event_id', 1);
+                })->orWhere(function($query) use($request) {
+                    $query->where('student_id', $request->student_id)
+                        ->where('event_id', 9);
+                })->orWhere(function($query) use($request) {
+                    $query->where('student_id', $request->student_id)
+                    ->where('event_id', 12);
+                })->get();
+
+                if($checkSpecialEvents->count() > 0) {
+                    return redirect()->back()
+                            ->with('messageError', 'You have already enrolled in IT Manager/EventX/Hackathon. So, you are not allowed to enroll in any other event!');
+                } else {
+                    if($request->event_id == 7) {
+                        $checkGamingEvents = StudentEvents::where(function($query) use($request) {
+                            $query->where('student_id', $request->student_id)
+                                ->where('subEvent', 'CS');
+                        })->orWhere(function($query) use($request) {
+                            $query->where('student_id', $request->student_id)
+                                ->where('subEvent', 'Blur');
+                        })->orWhere(function($query) use($request) {
+                            $query->where('student_id', $request->student_id)
+                                ->where('subEvent', 'Fifa');
+                        })->get();
+
+                        if($checkGamingEvents->count() == 0) {
+                            $studentEvent = new StudentEvents;
+                            $studentEvent->student_id = $request->student_id;
+                            $studentEvent->event_id = $request->event_id;
+                            $studentEvent->enrollStatus = $request->enrollStatus;
+                            $studentEvent->subEvent = $request->subEvent;
+                            $studentEvent->save();
+
+                            return redirect()->back()
+                                ->with('messageSuccess', 'You have Successfully enrolled in Gaming. Please go to the venue on time. Also make sure the timings of other events that you may have enrolled in do not clash with this event.');
+                        } else {
+                            return redirect()->back()
+                            ->with('messageError', 'You have already enrolled in other Gaming Event. So, you are not allowed to enroll in this Gaming event!');
+                        }
+                    } else {
+                        $checkExistingEvent = StudentEvents::where('student_id', $request->student_id)
+                                                ->where('event_id', $request->event_id)->get();
+
+                        if($checkExistingEvent->count() == 0) {
+                            $studentEvent = new StudentEvents;
+                            $studentEvent->student_id = $request->student_id;
+                            $studentEvent->event_id = $request->event_id;
+                            $studentEvent->enrollStatus = $request->enrollStatus;
+                            $studentEvent->subEvent = 'n/a';
+                            $studentEvent->save();
+
+                            return redirect()->back()
+                                ->with('messageSuccess', 'You have Successfully enrolled in this Event. Please go to the venue on time. Also make sure the timings of other events that you may have enrolled in do not clash with this event.');
+                        } else {
+                            return redirect()->back()
+                            ->with('messageError', 'You have already enrolled in this Event. So, you are not allowed to enroll in this event!');
+                        }
+                    }
+                }
+            }
+        } else {
+            return redirect()->back()
+                ->with('messageError', 'You have not paid the Registration Fee yet! Please pay the fee to enable Event Enrollment.');
+        }
+    }
 }

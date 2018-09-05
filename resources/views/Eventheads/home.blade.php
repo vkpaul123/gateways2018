@@ -15,7 +15,7 @@
             </div>
             @endif --}}
 
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
                     Eventhead Dashboard
                     <div class="pull-right"><strong>Event:</strong> &nbsp; {{ $event->name }} &nbsp; <i>({{ $event->commonName }})</i></div>
@@ -51,6 +51,7 @@
                                             <th>Email</th>
                                             <th>Mobile</th>
                                             <th>Sub-Event</th>
+                                            <th>Attendance</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -61,15 +62,22 @@
                                                     <td>{{ $student->student_id->name }}</td>
                                                     <td>
                                                         @if($student->student_id->sex)
-                                                            Female
-                                                        @else
                                                             Male
+                                                        @else
+                                                            Female
                                                         @endif
                                                     </td>
                                                     <td>{{ $student->student_id->team }}</td>
                                                     <td>{{ $student->student_id->email }}</td>
                                                     <td>{{ $student->student_id->mobile }}</td>
                                                     <td>{{ $student->subEvent }}</td>
+                                                    <td>
+                                                        @if ($student->attend)
+                                                            <span class="text-success"><i>Present</i></span>
+                                                        @else
+                                                            <a href="{{ route('student.markPresent', ['student_id' => $student->student_id->id, 'event_id' => Auth::user()->event_id]) }}" class="btn btn-info">Mark Present</a>
+                                                        @endif
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         

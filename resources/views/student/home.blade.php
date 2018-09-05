@@ -15,6 +15,17 @@
             </div>
             @endif --}}
 
+            @if (Session::has('messageError'))
+              <div class="alert alert-danger">{!! Session::get('messageError') !!}
+                <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>
+              </div>
+            @endif
+            @if (Session::has('messageSuccess'))
+              <div class="alert alert-success">{!! Session::get('messageSuccess') !!}
+                <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>
+              </div>
+            @endif
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Dashboard
@@ -35,12 +46,12 @@
                         
                     </div>
                     <hr>
-
+                    
                     <div class="col-md-3">
-                        <h4>My QR Code</h4>
+                        {{-- <h4>My QR Code</h4>
                         <center>
                             {!! QrCode::size(150)->generate(Auth::user()->registHash); !!}
-                        </center>
+                        </center> --}}
                         <div class="panel panel-info">
                             <div class="panel-heading"><strong>Team Name</strong></div>
 
@@ -100,7 +111,7 @@
                                                     <div class="panel-heading">Enrollment</div>
 
                                                     <div class="panel-body">
-                                                        <h4>Scan to enroll</h4>
+                                                        {{-- <h4>Scan to enroll</h4>
                                                             <center>
                                                                 @if ($event->id == env('GAMING_EVENT_ID'))
                                                                     <h5>Counter Strike 1.6</h5>
@@ -115,7 +126,13 @@
                                                                     {!! QrCode::size(150)->generate($event->qrCodeHash); !!}
                                                                 @endif
                                                             </center>
-                                                        <hr>
+                                                        <hr> --}}
+                                                        @if ($event->id == env('GAMING_EVENT_ID'))
+                                                            <input type="radio" name="gaming" id="gaming_cs" onclick="setGame(1)"> &nbsp; Counter Strike 1.6 <br>
+                                                            <input type="radio" name="gaming" id="gaming_blur" onclick="setGame(2)"> &nbsp; Blur <br>
+                                                            <input type="radio" name="gaming" id="gaming_fifa" onclick="setGame(3)"> &nbsp; FIFA '18 <br>
+                                                            <hr>
+                                                        @endif
                                                         Location: <strong>{{ $event->location }}</strong> <br>
                                                         Time: <strong>{!! $event->time !!}</strong> <br>
                                                         Event Type: 
@@ -132,11 +149,26 @@
                                                         <hr>
                                                                     
                                                         <strong>Enrollment Status:</strong> &nbsp;
-                                                            Enrolled
+                                                        @php
+                                                            $notEnrolled = true;
+                                                        @endphp
+                                                            @foreach ($eventsEnrolled as $eventEnrolled)
+                                                                @if($event->id == $eventEnrolled->event_id)
+                                                                    <span class="text-success"><i><b>Enrolled</b></i></span>
+
+                                                                    @php
+                                                                        $notEnrolled = false;
+                                                                    @endphp
+                                                                @endif
+                                                            @endforeach
+
+                                                        @if ($notEnrolled == true)
+                                                            <span class="text-muted"><i>Not Enrolled</i></span>
+                                                        @endif
                                                         
                                                         <div class="container-fluid">
                                                             <div class="row">
-                                                                <a href="" class="btn btn-block btn-success disabled"><strong>Enroll</strong></a>
+                                                                <a href="" class="btn btn-block btn-info {{ $notEnrolled==false? ' disabled' : ' ' }}" onclick="if(confirm('Are you sure you want to enroll in this event?')) { event.preventDefault(); document.getElementById('enrollment-{{ $event->id }}').submit(); } else event.preventDefault();"><strong>Enroll in Event</strong></a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -148,13 +180,18 @@
                             </div>
                             
                             @if ($event->id == env('GAMING_EVENT_ID'))
-                                <form action="" style="display: none;" id="enrollment-">
-                                    
+                                <form action="{{ route('students-event-enrollment') }}" method="post" style="display: none;" id="enrollment-{{ $event->id }}">
+                                    <input type="hidden" name="student_id" id="student_id" value="{{ Auth::user()->id }}">
+                                    <input type="hidden" name="event_id" id="event_id" value="{{ $event->id }}">
+                                    <input type="hidden" name="enrollStatus" id="enrollStatus" value="1">
+                                    <input type="hidden" name="subEvent" id="subEvent">
                                 </form>
 
                             @else
-                                <form action="" style="display: none;" id="enrollment-{{ $event->id }}">
-                                    
+                                <form action="{{ route('students-event-enrollment') }}" method="post" style="display: none;" id="enrollment-{{ $event->id }}">
+                                    <input type="hidden" name="student_id" id="student_id" value="{{ Auth::user()->id }}">
+                                    <input type="hidden" name="event_id" id="event_id" value="{{ $event->id }}">
+                                    <input type="hidden" name="enrollStatus" id="enrollStatus" value="1">
                                 </form>
                             @endif
                         @endforeach
@@ -177,5 +214,21 @@
         });
     </script>
 @endif
+
+<script>
+    function setGame(x) {
+        switch (x) {
+            case 1:
+                jQuery("#subEvent").val('CS');
+                break;
+            case 2:
+                jQuery("#subEvent").val('Blur');
+                break;
+            case 3:
+                jQuery("#subEvent").val('Fifa');
+                break;
+        }
+    }
+</script>
 
 @endsection

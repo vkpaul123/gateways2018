@@ -394,7 +394,8 @@
 							</p>
 							<h4>Rules:</h4>
 					  		<p><ul>
-					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; 2 participants per college.</li>
+					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; 2 participants per college.</li><br>
+					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants cannot participate in any other event.</li>
 					  				<br>
 									<li><i style="color: rgb(219, 82, 82);">That’s All We can Say!</i></li>
 					  		</ul></p>

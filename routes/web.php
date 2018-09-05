@@ -135,6 +135,8 @@ Route::get('verifyEmailFirst/{email}/invalid/app','PageController@invalidTokenAp
 
 Route::get('/students/takePayment/{id}/pay', 'Admin\PaymentController@takePayment')->name('student.take-payment');
 
+Route::post('/students/enrollment/event', 'StudentController@enrollmentInEvent')->name('students-event-enrollment');
+
 
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -157,5 +159,16 @@ Route::group(['namespace' => 'Admin'], function() {
 		Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 		Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('admin.password.reset');
 		Route::post('logout', 'Auth\LoginController@logout')->name('admin.logout');
+
+		//	Student
+		Route::get('/student/{id}/edit/', 'PaymentController@editStudentShow')->name('show.Student.editForm');
+		Route::put('/student/{id}/edit/', 'PaymentController@editStudentUpdate')->name('show.Student.editForm-update');
+		Route::delete('/student/{id}/delete/', 'PaymentController@editStudentDelete')->name('show.Student.editForm-delete');
+
+		//	Event Head
+		Route::get('/event/student/{student_id}/{event_id}/markPresent', 'HomeController@markPresent')->name('student.markPresent');
+
+		//	Reports
+		Route::get('/reports/', 'PaymentController@reports');
 	});
 });

@@ -11,6 +11,7 @@
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/css/dataTables.bootstrap.min.css" integrity="sha256-PbaYLBab86/uCEz3diunGMEYvjah3uDFIiID+jAtIfw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
 </head>
 <body>
 	<header class="top-header shows">

@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
 
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
                     Eventhead Dashboard
                     <div class="pull-right"><strong>Event:</strong> &nbsp; Registration Desk</i></div>
@@ -58,12 +58,16 @@
                                             @foreach ($students as $student)
                                                 <tr>
                                                     <td>{{ $student->id }}</td>
-                                                    <td>{{ $student->name }}</td>
+                                                    <td>
+                                                        <a href="{{ route('show.Student.editForm', $student->id) }}">
+                                                            <strong>{{ $student->name }}</strong>
+                                                        </a>
+                                                    </td>
                                                     <td>
                                                         @if($student->sex)
-                                                            Female
-                                                        @else
                                                             Male
+                                                        @else
+                                                            Female
                                                         @endif
                                                     </td>
                                                     <td>{{ $student->team }}</td>
@@ -86,9 +90,9 @@
                                                     </td>
                                                     <td>
                                                         @if ($student->amountPaid)
-                                                            <span class="text-success"><i>Payment Recieved.</i></span>
+                                                            <strong class="text-success"><i>Payment Recieved</i></strong>
                                                         @else
-                                                            <a href="{{ route('student.take-payment', $student->id) }}" class="btn btn-sm btn-warning">Take Payment</a>
+                                                            <a href="{{ route('student.take-payment', $student->id) }}" class="btn btn-sm btn-warning" onclick="if(!confirm('Are you sure the Payment is taken?')) event.preventDefault();">Take Payment</a>
 
                                                             {{-- <form action="" class="hidden" id="payment-form-{{ $student->id }}">
                                                                 {{ method_field('PUT') }}

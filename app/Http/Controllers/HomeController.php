@@ -33,6 +33,7 @@ class HomeController extends Controller
 
         return view('student.home')
         ->with(compact('events'))
+        ->with(compact('eventsEnrolled'))
         ->with(compact('totalMembers'));
     }
 }
