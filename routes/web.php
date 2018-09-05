@@ -130,6 +130,8 @@ Route::get('verify/{email}/{verifyToken}/app', 'StudentController@sendEmailDoneA
 Route::get('verifyEmailFirst/{email}/invalid','PageController@invalidToken')->name('invalidToken');
 Route::get('verifyEmailFirst/{email}/invalid/app','PageController@invalidTokenApp')->name('invalidTokenApp');
 
+Route::get('/students/takePayment/{id}/pay', 'Admin\PaymentController@takePayment')->name('student.take-payment');
+
 
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------

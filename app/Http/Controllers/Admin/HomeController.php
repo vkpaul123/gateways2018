@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\College;
+use App\Event;
 use App\Http\Controllers\Controller;
+use App\Student;
+use App\StudentEvents;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -19,6 +24,28 @@ class HomeController extends Controller
     }
     
     public function index() {
-    	return view('Eventheads.home');
+        if(Auth::user()->event_id <= 12) {
+            $event = Event::find(Auth::user()->event_id);
+            $students = StudentEvents::where('event_id', Auth::user()->event_id)->get();
+
+            if(isset($students)) {
+                foreach ($students as $student) {
+                    $student->$student_id = Student::find($student->$student_id);
+                }
+            }
+
+        	return view('Eventheads.home')
+            ->with(compact('event'))
+            ->with(compact('students'));
+        } else {
+            $students = Student::all();
+
+            foreach ($students as $student) {
+                $student->college_id = College::find($student->college_id)->name;
+            }
+
+            return view('Eventheads.studentRegistration')
+            ->with(compact('students'));
+        }
     }
 }

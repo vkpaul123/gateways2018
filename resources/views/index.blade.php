@@ -1119,6 +1119,7 @@
 					    {{-- <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li> --}}
 					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
 				  	</ol><!-- /.carousel-indicators -->
 					
 				  	<!-- Wrapper for slides -->
@@ -1149,6 +1150,15 @@
 					       		Technical Partner
 					       	</h3>
 					       	<a target="_blank" href="{{ url('https://www.mozilla.org/en-US/') }}" class="btn btn-default">Visit</a>
+					    </div><!-- /.item -->
+					    <div class="item">
+					    	<div class="img-center" >	
+					      		<img src="{{ asset('nevada/nevada1/logoss/Sponsors/Vivo.jpg') }}" height="240px">
+					        </div>
+					       	<h3>
+					       		&nbsp;
+					       	</h3>
+					       	<a target="_blank" href="{{ url('https://www.vivo.com/in/') }}" class="btn btn-default">Visit</a>
 					    </div><!-- /.item -->
 				  	</div><!-- /.carousel-inner -->
 				</div><!-- /.carousel slide -->
