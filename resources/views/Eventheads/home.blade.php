@@ -51,6 +51,7 @@
                                             <th>Email</th>
                                             <th>Mobile</th>
                                             <th>Sub-Event</th>
+                                            <th>Enrollment Time</th>
                                             <th>Attendance</th>
                                         </tr>
                                     </thead>
@@ -71,6 +72,7 @@
                                                     <td>{{ $student->student_id->email }}</td>
                                                     <td>{{ $student->student_id->mobile }}</td>
                                                     <td>{{ $student->subEvent }}</td>
+                                                    <td>{{ $student->created_at->diffForHumans() }}</td>
                                                     <td>
                                                         @if ($student->attend)
                                                             <span class="text-success"><i>Present</i></span>

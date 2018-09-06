@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('pageSpecificHeads')
 
@@ -395,8 +395,7 @@
 							<h4>Rules:</h4>
 					  		<p><ul>
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; 2 participants per college.</li><br>
-					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants cannot participate in any other event.</li>
-					  				<br>
+					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants cannot participate in any other event.</li><br>
 									<li><i style="color: rgb(219, 82, 82);">That’s All We can Say!</i></li>
 					  		</ul></p>
 						</div><!--medal-body-->
@@ -989,7 +988,7 @@
 														  
 												<tr class="success">
 													<td class="warning">IT LAB, 1ST FLOOR, 2ND BLOCK</td>
-													<td class="warning" colspan="4">APP PROTOTYPING FINALS</td>
+													<td class="warning" colspan="4">APP PROTOTYPING</td>
 													<td class="danger"></td>
 													<td></td>
 													<td></td>
@@ -1120,7 +1119,6 @@
 					    {{-- <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li> --}}
 					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
 				  	</ol><!-- /.carousel-indicators -->
 					
 				  	<!-- Wrapper for slides -->
@@ -1151,15 +1149,6 @@
 					       		Technical Partner
 					       	</h3>
 					       	<a target="_blank" href="{{ url('https://www.mozilla.org/en-US/') }}" class="btn btn-default">Visit</a>
-					    </div><!-- /.item -->
-					    <div class="item">
-					    	<div class="img-center" >	
-					      		<img src="{{ asset('nevada/nevada1/logoss/Sponsors/Vivo.jpg') }}" height="240px">
-					        </div>
-					       	<h3>
-					       		&nbsp;
-					       	</h3>
-					       	<a target="_blank" href="{{ url('https://www.vivo.com/in/') }}" class="btn btn-default">Visit</a>
 					    </div><!-- /.item -->
 				  	</div><!-- /.carousel-inner -->
 				</div><!-- /.carousel slide -->
@@ -1340,7 +1329,7 @@
                         <li><i class="fa fa-check"></i>Participants who register will get access to a Gateways account, where information about all the events is provided. Participants can then enroll for events of their choice, provided the rules for those events are adhered to</li><br>
                         <li><i class="fa fa-check"></i>Laptops, pen drives or cameras needed for the events must be carried by the participants.</li><br>
                         <li><i class="fa fa-check"></i>Registration fee of Rs.100 per participant is to be paid. The fee will not be refunded in any case.</li><br>
-                        <li><i class="fa fa-check"></i>Registration can be done on the spot, via the app or the website. Registration fee shall be paid on the spot. Participants must be present at the venue at 7:30am on 6 September 2018 for registration.</li><br>
+                        <li><i class="fa fa-check"></i>Registration can be done on the spot and through the website. Registration fee shall be paid on the spot. Participants must be present at the venue at 7:30am on 6 September 2018 for registration.</li><br>
                         <li><i class="fa fa-check"></i>Outstation students should inform the fest organizers about accommodation requirements before 4 September 2018.</li><br>
                         <li><i class="fa fa-check"></i>Participants must report at the venue 15 mins prior to the event time.</li><br>
 					</ul>
