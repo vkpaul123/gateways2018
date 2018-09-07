@@ -164,9 +164,14 @@ Route::group(['namespace' => 'Admin'], function() {
 		Route::get('/student/{id}/edit/', 'PaymentController@editStudentShow')->name('show.Student.editForm');
 		Route::put('/student/{id}/edit/', 'PaymentController@editStudentUpdate')->name('show.Student.editForm-update');
 		Route::delete('/student/{id}/delete/', 'PaymentController@editStudentDelete')->name('show.Student.editForm-delete');
+		Route::delete('/student/event/enrollment/{id}/delete', 'PaymentController@unEnrollStudent')->name('unEnrollStudent-admin');
+		Route::post('/student/event/enrollment/addNew', 'PaymentController@enrollStudent')->name('enrollStudent-admin');
 
 		//	Event Head
 		Route::get('/event/student/{student_id}/{event_id}/markPresent', 'HomeController@markPresent')->name('student.markPresent');
+
+		//	Show Print Page
+		Route::get('/event/printPage', 'HomeController@showPrintPage')->name('showPrintPage');
 
 		//	Reports
 		Route::get('/reports/', 'PaymentController@reports');

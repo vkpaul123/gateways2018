@@ -347,6 +347,14 @@
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; The playback format of the video must be in mp4.</li><br>
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; The video must be submitted to the event coordinators in a usb drive on the 2nd day between 1.30pm and 2pm.</li><br>
 					  		</ul></p>
+					  		<hr><h4>Contact:</h4>
+					  		<p>
+					  			<ul>
+					  				<li><i class="fa fa-phone"></i> &nbsp; TONY (V MCA): 9902771821</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; RAJAT (III MSC): 7795348820</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; RUBEN (III MCA): 8123542470</li><br>
+					  			</ul>
+					  		</p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
 				  	</div> <!--medal-->						
@@ -373,6 +381,14 @@
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Internet will be provided.</li><br>
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; The decision made by the judges will be final.</li><br>
 					  		</ul></p>
+					  		<hr><h4>Contact:</h4>
+					  		<p>
+					  			<ul>
+					  				<li><i class="fa fa-phone"></i> &nbsp; NIRMAL (V MCA): 9656178134</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; SUMIT (III MSC): 9021394928</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; MADHAVI (III MCA): 7619164933</li><br>
+					  			</ul>
+					  		</p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
 				  	</div> <!--medal-->	
@@ -398,6 +414,14 @@
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants cannot participate in any other event.</li><br>
 									<li><i style="color: rgb(219, 82, 82);">That’s All We can Say!</i></li>
 					  		</ul></p>
+					  		<hr><h4>Contact:</h4>
+					  		<p>
+					  			<ul>
+					  				<li><i class="fa fa-phone"></i> &nbsp; NEHA (V MCA): 8904794556</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; PAWAN (III MSC): 9686794019</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; PRAKASH (III MCA): 9931021948</li><br>
+					  			</ul>
+					  		</p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
 				  	</div> <!--medal-->	
@@ -440,6 +464,14 @@
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; The decision of the judges will be considered as the final decision.</li>
 									<br>
 					  		</ul></p>
+					  		<hr><h4>Contact:</h4>
+					  		<p>
+					  			<ul>
+					  				<li><i class="fa fa-phone"></i> &nbsp; PRATIKSHA (V MCA): 9979782005</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; NOEL TOY (III MSC): 9633514465</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; NIDA (III MCA): 9673604508</li><br>
+					  			</ul>
+					  		</p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
 				  	</div> <!--medal-->	
@@ -482,6 +514,14 @@
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Photographs should be submitted within the time allotted (3 pm to 3: 30 pm)</li>
 									<br>
 					  		</ul></p>
+					  		<hr><h4>Contact:</h4>
+					  		<p>
+					  			<ul>
+					  				<li><i class="fa fa-phone"></i> &nbsp; THOMAS (V MCA): 8769108122</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; JONATHAN (III MSC): 9033227254</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; SHREY (III MCA): 7795629454</li><br>
+					  			</ul>
+					  		</p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
 				  	</div> <!--medal-->	
@@ -535,6 +575,16 @@
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; If a participant damages any peripherals provided, he/she will be held responsible.</li><br>
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Raging is not encouraged. Raging unnecessarily can get participants disqualified.</li><br>
 					  		</ul></p>
+					  		<hr><h4>Contact:</h4>
+					  		<p>
+					  			<ul>
+					  				<li><i class="fa fa-phone"></i> &nbsp; ANKIT (V MCA): 8123107440</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; VIKRAMSINH (V MCA): 8308537846</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; SHAHAB (III MSC): 9739793948</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; SALMAN (III MSC): 9738756665</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; NITIN (III MCA): 8123247441</li><br>
+					  			</ul>
+					  		</p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
 				  	</div> <!--medal-->	
@@ -564,6 +614,14 @@
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants will not be allowed to use mobile or other electronic gadgets.</li><br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; The Questions will be in the form of multiple choice, true/false statement, specific-answer questions etc.</li><br>
 					  		</ul></p>
+					  		<hr><h4>Contact:</h4>
+					  		<p>
+					  			<ul>
+					  				<li><i class="fa fa-phone"></i> &nbsp; TANUJA (V MCA): 9591779850</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; MEGHNA (III MCS): 9902691342</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; SOHAM (III MCA): 7508338815</li><br>
+					  			</ul>
+					  		</p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
 				  	</div> <!--medal-->	
@@ -592,6 +650,14 @@
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Electronic devices are not allowed.</li><br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Violation of general code of conduct will lead to disqualification of participants from the event.</li><br>
 					  		</ul></p>
+					  		<hr><h4>Contact:</h4>
+					  		<p>
+					  			<ul>
+					  				<li><i class="fa fa-phone"></i> &nbsp; AMRITA (V MCA): 7204365350</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; PREETI (III MSC): 9916718983</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; VISHAL (III MCA): 9772468478</li><br>
+					  			</ul>
+					  		</p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
 				  	</div> <!--medal-->	
@@ -621,6 +687,14 @@
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Time taken and lines of code will be noted.</li><br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; If there is a tie, above mentioned rule will be the deciding factor.</li><br>
 					  		</ul></p>
+					  		<hr><h4>Contact:</h4>
+					  		<p>
+					  			<ul>
+					  				<li><i class="fa fa-phone"></i> &nbsp; HIMANSHU (V MCA): 8861847120</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; VINARASU  (III MSC): 9159414383</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; PONGRAPEE (III MCA): 9538490540</li><br>
+					  			</ul>
+					  		</p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
 				  	</div> <!--medal-->	
@@ -651,6 +725,14 @@
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Pre-built projects won’t be entertained.</li><br>
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants of this event won’t be able to participate in any other event.</li><br>
 					  		</ul></p>
+					  		<hr><h4>Contact:</h4>
+					  		<p>
+					  			<ul>
+					  				<li><i class="fa fa-phone"></i> &nbsp; NANDITHA (V MCA): 9741308843</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; SANJAY (III MSC): 9902206832</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; LAKSHAY (III MCA): 8585950575</li><br>
+					  			</ul>
+					  		</p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
 				  	</div> <!--medal-->	
@@ -683,6 +765,14 @@
 									<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Each team must stick to the time limit specified.</li>
 									<br>
 					  		</ul></p>
+					  		<hr><h4>Contact:</h4>
+					  		<p>
+					  			<ul>
+					  				<li><i class="fa fa-phone"></i> &nbsp; ANISH (V MCA): 9741666811</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; CHARVI (III MSC): 9654229625</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; SHREYASHI (III MCA): 9900844994</li><br>
+					  			</ul>
+					  		</p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
 				  	</div> <!--medal-->	
@@ -708,6 +798,14 @@
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants are NOT allowed to participate in any other Event.</li><br>
 					  				<li><i class="fa fa-check" style="color: rgb(219, 82, 82);"></i> &nbsp; Participants are required to carry their own laptop.</li><br>
 					  		</ul></p>
+					  		<hr><h4>Contact:</h4>
+					  		<p>
+					  			<ul>
+					  				<li><i class="fa fa-phone"></i> &nbsp; CARL (V MCA): 7019922101</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; LANS (III MSC): 8891100669</li><br>
+					  				<li><i class="fa fa-phone"></i> &nbsp; PRACHI (III MCA): 8899912340</li><br>
+					  			</ul>
+					  		</p>
 						</div><!--medal-body-->
 				  		</div></div> <!--medal-content.medal-dialog-->
 				  	</div> <!--medal-->	

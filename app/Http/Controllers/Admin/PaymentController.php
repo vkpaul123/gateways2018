@@ -42,6 +42,7 @@ class PaymentController extends Controller
     	$colleges = College::all();
     	$teams = Student::distinct('team')->pluck('team');
     	$events = StudentEvents::where('student_id', $id)->get();
+    	$allEvents = Event::all();
 
     	if($events->count() > 0) {
     		foreach ($events as $event) {
@@ -53,6 +54,7 @@ class PaymentController extends Controller
     	->with(compact('student'))
     	->with(compact('teams'))
     	->with(compact('events'))
+    	->with(compact('allEvents'))
     	->with(compact('colleges'));
     }
 
@@ -99,5 +101,30 @@ class PaymentController extends Controller
     		'collegeCount' => $colleges->count(),
     		'colleges' => $colleges
     	], 200);
+    }
+
+    public function unEnrollStudent($id)
+    {
+    	StudentEvents::find($id)->delete();
+
+    	return redirect()->back()
+    	->with('message', 'Event Un-Enrollment done for this Student.');
+    }
+
+    public function enrollStudent(Request $request)
+    {
+    	$this->validate($request, [
+    		'event_id' => 'required',
+    	]);
+
+    	$studentEvent = new StudentEvents;
+    	$studentEvent->student_id = $request->student_id;
+    	$studentEvent->event_id = $request->event_id;
+    	$studentEvent->subEvent = $request->subEvent;
+    	$studentEvent->enrollStatus = 1;
+    	$studentEvent->save();
+
+    	return redirect()->back()
+    	->with('message', 'Event Enrollment done for this Student.');
     }
 }

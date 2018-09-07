@@ -31,8 +31,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h3>Welcome, <strong class="text-primary">{{ Auth::user()->name }}</strong></h3>
+                            <div class="pull-right">
+                                <a href="{{ route('showPrintPage') }}" class="btn btn-success" target="_blank"><strong>Print</strong></a>
+                            </div>
                         </div>
-                        
                     </div>
                     <hr>
 
@@ -106,7 +108,7 @@
       'paging' : true,
       'lengthChange' : true,
       'searching' : true,
-      'ordering' : false,
+      'ordering' : true,
       'info' : true,
       'autoWidth' : true
     })

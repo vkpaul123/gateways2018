@@ -142,7 +142,9 @@
                                 </div>
                                 <hr>
                                 <div class="form-group">
-                                    <input type="submit" class="btn btn-block btn-success">
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <input type="submit" class="btn btn-block btn-success">
+                                    </div>
                                 </div>
 
                             </form>
@@ -155,14 +157,83 @@
                     <h4><strong>Events enrolled in...</strong></h4>
                     <hr>
                     <ul>
-                        @forelse ($events as $event)
-                            <li>
-                                <strong>{{ $event->event_id->name }}</strong> &nbsp; ({{ $event->event_id->commonName }})
-                            </li>
-                        @empty
-                            <li>Not enrolled any Events!</li>
-                        @endforelse
+                        <li>
+                            <table>
+                                @forelse ($events as $event)
+                                    <tr>
+                                        <td>
+                                            <strong>{{ $event->event_id->name }}</strong>    
+                                        </td>
+                                        <td>
+                                            &nbsp; ({{ $event->event_id->commonName }}) &nbsp;&nbsp;&nbsp;    
+                                        </td>
+                                        <td>
+                                            <a href="" class="btn btn-danger btn-xs" onclick="
+                                                if(confirm('Are you sure you want to un-enroll this student from this event?')) {
+                                                    event.preventDefault();
+                                                    document.getElementById('un-enroll-{{ $event->id }}').submit();
+                                                } else {
+                                                    event.preventDefault();
+                                                }
+                                            ">Un-Enroll</a>
+
+                                            <form action="{{ route('unEnrollStudent-admin', $event->id) }}" method="post" class="hidden" id="un-enroll-{{ $event->id }}">
+                                                {{ method_field('DELETE') }}
+
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr colspan="3">Not enrolled any Events!</tr>
+                                @endforelse
+                                
+                            </table>
+                            
+                        </li>
                     </ul>
+
+                    <hr>
+                    <h3><strong>Enroll this person in Event...</strong></h3>
+                    <form action="{{ route('enrollStudent-admin') }}" class="form-horizontal" method="post">
+                        <div class="form-group{{ $errors->has('event_id') ? ' has-error' : '' }}">
+                            <label for="event_id" class="col-md-4 control-label">Event Name</label>
+                            <div class="col-md-4">
+                                <select class="form-control select2" style="width: 100%;" name="event_id" id="event_id">
+                                    <option disabled="disabled" selected="selected" value="">(Select Event)</option>
+                                    @if ($allEvents->count())
+                                        @foreach ($allEvents as $event)
+                                            <option value="{{ $event->id }}">{{ $event->name }}</option>
+                                        @endforeach
+                                    @endif
+                                    
+                                </select>
+                                
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('subEvent') ? ' has-error' : '' }}">
+                            <label for="subEvent" class="col-md-4 control-label">Sub-Event Name (Only for Gaming)</label>
+                            <div class="col-md-4">
+                                <select class="form-control select2" style="width: 100%;" name="subEvent" id="subEvent">
+
+                                    <option value="n/a">n/a</option>
+                                    <option value="CS">CS</option>
+                                    <option value="Blur">Blur</option>
+                                    <option value="Fifa">Fifa</option>
+                                    
+                                </select>
+                                
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="student_id" value="{{ $student->id }}">
+                        <hr>
+                        <div class="form-group">
+                            <div class="col-md-4 col-md-offset-4">
+                                <input type="submit" class="btn btn-block btn-success">
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

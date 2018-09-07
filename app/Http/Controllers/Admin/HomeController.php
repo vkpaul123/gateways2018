@@ -55,4 +55,21 @@ class HomeController extends Controller
 
         return redirect()->back();
     }
+
+    public function showPrintPage()
+    {
+        $event = Event::find(Auth::user()->event_id);
+        $students = StudentEvents::where('event_id', Auth::user()->event_id)->get();
+
+        if(isset($students)) {
+            foreach ($students as $student) {
+                $student->student_id = Student::find($student->student_id);
+                $student->student_id->college_id = College::find($student->student_id->college_id)->name;
+            }
+        }
+
+        return view('Eventheads.print')
+        ->with(compact('event'))
+        ->with(compact('students'));
+    }
 }
