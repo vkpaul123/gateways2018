@@ -168,6 +168,11 @@
                                             &nbsp; ({{ $event->event_id->commonName }}) &nbsp;&nbsp;&nbsp;    
                                         </td>
                                         <td>
+                                            @if ($event->event_id->id == env('GAMING_EVENT_ID'))
+                                                &nbsp; {{ $event->subEvent }} &nbsp;&nbsp;&nbsp;
+                                            @endif
+                                        </td>
+                                        <td>
                                             <a href="" class="btn btn-danger btn-xs" onclick="
                                                 if(confirm('Are you sure you want to un-enroll this student from this event?')) {
                                                     event.preventDefault();
